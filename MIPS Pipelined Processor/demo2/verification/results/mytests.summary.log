@@ -1,0 +1,5 @@
+/u/k/a/karu//courses/cs552/fall2020/handouts/testprograms/public/inst_tests/add_0.asm SUCCESS CPI:1.9 CYCLES:15 ICOUNT:8 IHITRATE: 0 DHITRATE: 0
+/u/k/a/karu//courses/cs552/fall2020/handouts/testprograms/public/inst_tests/add_1.asm SUCCESS CPI:3.3 CYCLES:10 ICOUNT:3 IHITRATE: 0 DHITRATE: 0
+/u/k/a/karu//courses/cs552/fall2020/handouts/testprograms/public/inst_tests/add_2.asm SUCCESS CPI:3.3 CYCLES:10 ICOUNT:3 IHITRATE: 0 DHITRATE: 0
+/u/k/a/karu//courses/cs552/fall2020/handouts/testprograms/public/inst_tests/addi_0.asm SUCCESS CPI:4.5 CYCLES:9 ICOUNT:2 IHITRATE: 0 DHITRATE: 0
+//NEED TO FIX THIS!!!

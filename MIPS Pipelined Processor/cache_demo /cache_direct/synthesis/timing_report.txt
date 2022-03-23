@@ -1,0 +1,1587 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : mem_system
+Version: Q-2019.12-SP3
+Date   : Fri Apr 30 11:46:51 2021
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: gscl45nm
+Wire Load Model Mode: top
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m0/reg1[1]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U12/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<1> (memc_Size16_2)                   0.00       0.82 f
+  c0/U15/Y (AOI22X1)                                      0.03       0.85 r
+  c0/U14/Y (BUFX2)                                        0.03       0.88 r
+  c0/U18/Y (AND2X2)                                       0.03       0.92 r
+  c0/U19/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<1> (cache_cache_id0)                        0.00       0.93 f
+  U258/Y (INVX1)                                          0.00       0.93 r
+  U257/Y (OR2X2)                                          0.04       0.97 r
+  U256/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<1> (four_bank_mem)                          0.00       1.00 f
+  mem/m0/data_in<1> (final_memory_3)                      0.00       1.00 f
+  mem/m0/reg1[1]/d (dff_17)                               0.00       1.00 f
+  mem/m0/reg1[1]/U4/Y (INVX1)                             0.00       1.00 r
+  mem/m0/reg1[1]/U3/Y (NOR2X1)                            0.01       1.00 f
+  mem/m0/reg1[1]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m0/reg1[1]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.06       0.94
+  data required time                                                 0.94
+  --------------------------------------------------------------------------
+  data required time                                                 0.94
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m0/reg1[5]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U79/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<5> (memc_Size16_2)                   0.00       0.82 f
+  c0/U161/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U70/Y (BUFX2)                                        0.03       0.88 r
+  c0/U96/Y (AND2X2)                                       0.03       0.92 r
+  c0/U97/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<5> (cache_cache_id0)                        0.00       0.93 f
+  U575/Y (INVX1)                                          0.00       0.93 r
+  U459/Y (OR2X2)                                          0.04       0.97 r
+  U305/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<5> (four_bank_mem)                          0.00       1.00 f
+  mem/m0/data_in<5> (final_memory_3)                      0.00       1.00 f
+  mem/m0/reg1[5]/d (dff_21)                               0.00       1.00 f
+  mem/m0/reg1[5]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m0/reg1[5]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m0/reg1[5]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m0/reg1[5]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.06       0.94
+  data required time                                                 0.94
+  --------------------------------------------------------------------------
+  data required time                                                 0.94
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m0/reg1[3]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U2135/Y (AND2X2)                              0.04       0.82 f
+  c0/mem_w1/data_out<3> (memc_Size16_2)                   0.00       0.82 f
+  c0/U156/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U69/Y (BUFX2)                                        0.03       0.88 r
+  c0/U94/Y (AND2X2)                                       0.03       0.92 r
+  c0/U95/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<3> (cache_cache_id0)                        0.00       0.93 f
+  U574/Y (INVX1)                                          0.00       0.93 r
+  U463/Y (OR2X2)                                          0.04       0.97 r
+  U306/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<3> (four_bank_mem)                          0.00       1.00 f
+  mem/m0/data_in<3> (final_memory_3)                      0.00       1.00 f
+  mem/m0/reg1[3]/d (dff_19)                               0.00       1.00 f
+  mem/m0/reg1[3]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m0/reg1[3]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m0/reg1[3]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m0/reg1[3]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.06       0.94
+  data required time                                                 0.94
+  --------------------------------------------------------------------------
+  data required time                                                 0.94
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m0/reg1[8]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U80/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<8> (memc_Size16_2)                   0.00       0.82 f
+  c0/U168/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U72/Y (BUFX2)                                        0.03       0.88 r
+  c0/U100/Y (AND2X2)                                      0.03       0.92 r
+  c0/U101/Y (INVX1)                                       0.02       0.93 f
+  c0/data_out<8> (cache_cache_id0)                        0.00       0.93 f
+  U577/Y (INVX1)                                          0.00       0.93 r
+  U444/Y (OR2X2)                                          0.04       0.97 r
+  U303/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<8> (four_bank_mem)                          0.00       1.00 f
+  mem/m0/data_in<8> (final_memory_3)                      0.00       1.00 f
+  mem/m0/reg1[8]/d (dff_24)                               0.00       1.00 f
+  mem/m0/reg1[8]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m0/reg1[8]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m0/reg1[8]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m0/reg1[8]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.06       0.94
+  data required time                                                 0.94
+  --------------------------------------------------------------------------
+  data required time                                                 0.94
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<14>
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U4/Y (INVX1)                                  0.03       0.74 f
+  c0/mem_w1/U81/Y (AND2X2)                                0.04       0.79 f
+  c0/mem_w1/U2144/Y (AND2X2)                              0.04       0.83 f
+  c0/mem_w1/data_out<14> (memc_Size16_2)                  0.00       0.83 f
+  c0/U180/Y (AOI22X1)                                     0.04       0.87 r
+  c0/U81/Y (BUFX2)                                        0.04       0.90 r
+  c0/U54/Y (AND2X2)                                       0.03       0.94 r
+  c0/U109/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<14> (cache_cache_id0)                       0.00       0.95 f
+  U570/Y (INVX1)                                          0.00       0.96 r
+  U685/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<14> (out)                                       0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<13>
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U4/Y (INVX1)                                  0.03       0.74 f
+  c0/mem_w1/U81/Y (AND2X2)                                0.04       0.79 f
+  c0/mem_w1/U2143/Y (AND2X2)                              0.04       0.83 f
+  c0/mem_w1/data_out<13> (memc_Size16_2)                  0.00       0.83 f
+  c0/U178/Y (AOI22X1)                                     0.04       0.87 r
+  c0/U80/Y (BUFX2)                                        0.04       0.90 r
+  c0/U58/Y (AND2X2)                                       0.03       0.94 r
+  c0/U108/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<13> (cache_cache_id0)                       0.00       0.95 f
+  U569/Y (INVX1)                                          0.00       0.96 r
+  U684/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<13> (out)                                       0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<10>
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U4/Y (INVX1)                                  0.03       0.74 f
+  c0/mem_w1/U81/Y (AND2X2)                                0.04       0.79 f
+  c0/mem_w1/U2140/Y (AND2X2)                              0.04       0.83 f
+  c0/mem_w1/data_out<10> (memc_Size16_2)                  0.00       0.83 f
+  c0/U172/Y (AOI22X1)                                     0.04       0.87 r
+  c0/U77/Y (BUFX2)                                        0.04       0.90 r
+  c0/U52/Y (AND2X2)                                       0.03       0.94 r
+  c0/U105/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<10> (cache_cache_id0)                       0.00       0.95 f
+  U566/Y (INVX1)                                          0.00       0.96 r
+  U681/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<10> (out)                                       0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: statereg/reg16bits[0]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U630/Y (INVX1)                                0.02       0.43 f
+  c0/mem_tg/U627/Y (AND2X2)                               0.04       0.47 f
+  c0/mem_tg/U791/Y (AND2X2)                               0.04       0.51 f
+  c0/mem_tg/data_out<2> (memc_Size5)                      0.00       0.51 f
+  c0/U128/Y (XNOR2X1)                                     0.05       0.56 r
+  c0/U6/Y (OR2X2)                                         0.06       0.62 r
+  c0/U114/Y (INVX1)                                       0.02       0.64 f
+  c0/U144/Y (NAND3X1)                                     0.03       0.67 r
+  c0/U117/Y (INVX1)                                       0.02       0.69 f
+  c0/U118/Y (INVX1)                                       0.01       0.70 r
+  c0/U119/Y (OR2X2)                                       0.04       0.74 r
+  c0/U120/Y (INVX1)                                       0.02       0.76 f
+  c0/hit (cache_cache_id0)                                0.00       0.76 f
+  U591/Y (NAND3X1)                                        0.03       0.79 r
+  U352/Y (BUFX2)                                          0.03       0.83 r
+  U592/Y (NAND2X1)                                        0.01       0.84 f
+  U517/Y (INVX1)                                          0.01       0.85 r
+  U408/Y (INVX1)                                          0.01       0.86 f
+  U593/Y (NOR3X1)                                         0.05       0.91 r
+  U599/Y (OAI21X1)                                        0.03       0.94 f
+  statereg/write_data<0> (register16)                     0.00       0.94 f
+  statereg/U43/Y (MUX2X1)                                 0.03       0.98 r
+  statereg/U15/Y (INVX1)                                  0.02       1.00 f
+  statereg/reg16bits[0]/d (dff_45)                        0.00       1.00 f
+  statereg/reg16bits[0]/U3/Y (INVX1)                      0.00       1.00 r
+  statereg/reg16bits[0]/U4/Y (NOR2X1)                     0.01       1.01 f
+  statereg/reg16bits[0]/state_reg/D (DFFPOSX1)            0.00       1.01 f
+  data arrival time                                                  1.01
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  statereg/reg16bits[0]/state_reg/CLK (DFFPOSX1)          0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[3]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: statereg/reg16bits[3]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[3]/state_reg/CLK (DFFPOSX1)          0.00 #     0.00 r
+  statereg/reg16bits[3]/state_reg/Q (DFFPOSX1)            0.11       0.11 f
+  statereg/reg16bits[3]/q (dff_48)                        0.00       0.11 f
+  statereg/read_data<3> (register16)                      0.00       0.11 f
+  U280/Y (AND2X2)                                         0.04       0.15 f
+  U279/Y (INVX1)                                          0.00       0.15 r
+  U277/Y (AND2X2)                                         0.03       0.18 r
+  U276/Y (INVX1)                                          0.02       0.19 f
+  U274/Y (NAND3X1)                                        0.03       0.23 r
+  U273/Y (NAND3X1)                                        0.02       0.25 f
+  U285/Y (BUFX2)                                          0.04       0.28 f
+  U291/Y (AND2X2)                                         0.03       0.31 f
+  U290/Y (INVX1)                                          0.00       0.31 r
+  U289/Y (NAND2X1)                                        0.01       0.32 f
+  c0/write (cache_cache_id0)                              0.00       0.32 f
+  c0/U11/Y (BUFX2)                                        0.04       0.36 f
+  c0/U8/Y (NAND3X1)                                       0.03       0.39 r
+  c0/U7/Y (INVX1)                                         0.03       0.41 f
+  c0/mem_tg/write (memc_Size5)                            0.00       0.41 f
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.03       0.44 r
+  c0/mem_tg/U3/Y (INVX1)                                  0.02       0.46 f
+  c0/mem_tg/U6/Y (INVX1)                                  0.00       0.46 r
+  c0/mem_tg/U457/Y (AND2X2)                               0.04       0.50 r
+  c0/mem_tg/data_out<1> (memc_Size5)                      0.00       0.50 r
+  c0/U25/Y (XNOR2X1)                                      0.04       0.54 r
+  c0/U23/Y (OR2X2)                                        0.04       0.58 r
+  c0/U22/Y (INVX1)                                        0.02       0.60 f
+  c0/U24/Y (NAND3X1)                                      0.03       0.63 r
+  c0/U30/Y (BUFX2)                                        0.04       0.67 r
+  c0/U5/Y (OAI21X1)                                       0.02       0.69 f
+  c0/U3/Y (INVX2)                                         0.02       0.70 r
+  c0/U131/Y (INVX1)                                       0.01       0.72 f
+  c0/mem_dr/write (memc_Size1)                            0.00       0.72 f
+  c0/mem_dr/U107/Y (INVX1)                                0.01       0.73 r
+  c0/mem_dr/U184/Y (NAND3X1)                              0.01       0.74 f
+  c0/mem_dr/U71/Y (INVX1)                                 0.00       0.74 r
+  c0/mem_dr/data_out<0> (memc_Size1)                      0.00       0.74 r
+  c0/U133/Y (INVX1)                                       0.02       0.75 f
+  c0/U146/Y (NOR3X1)                                      0.03       0.78 r
+  c0/dirty (cache_cache_id0)                              0.00       0.78 r
+  U613/Y (AOI21X1)                                        0.03       0.81 f
+  U355/Y (BUFX2)                                          0.03       0.85 f
+  U614/Y (NOR3X1)                                         0.04       0.88 r
+  U616/Y (AOI21X1)                                        0.02       0.91 f
+  statereg/write_data<3> (register16)                     0.00       0.91 f
+  statereg/U14/Y (BUFX2)                                  0.03       0.94 f
+  statereg/U42/Y (MUX2X1)                                 0.03       0.98 r
+  statereg/U16/Y (INVX1)                                  0.02       1.00 f
+  statereg/reg16bits[3]/d (dff_48)                        0.00       1.00 f
+  statereg/reg16bits[3]/U3/Y (INVX1)                      0.00       1.00 r
+  statereg/reg16bits[3]/U4/Y (NOR2X1)                     0.01       1.01 f
+  statereg/reg16bits[3]/state_reg/D (DFFPOSX1)            0.00       1.01 f
+  data arrival time                                                  1.01
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  statereg/reg16bits[3]/state_reg/CLK (DFFPOSX1)          0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.01
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<12>
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U5/Y (OAI21X1)                                       0.04       0.66 r
+  c0/U3/Y (INVX2)                                         0.02       0.68 f
+  c0/U130/Y (NOR2X1)                                      0.03       0.71 r
+  c0/mem_w2/write (memc_Size16_1)                         0.00       0.71 r
+  c0/mem_w2/U94/Y (BUFX2)                                 0.04       0.75 r
+  c0/mem_w2/U2/Y (INVX1)                                  0.02       0.77 f
+  c0/mem_w2/U91/Y (AND2X2)                                0.04       0.81 f
+  c0/mem_w2/U2152/Y (AND2X2)                              0.04       0.85 f
+  c0/mem_w2/data_out<12> (memc_Size16_1)                  0.00       0.85 f
+  c0/U175/Y (AOI22X1)                                     0.02       0.87 r
+  c0/U88/Y (BUFX2)                                        0.03       0.90 r
+  c0/U53/Y (AND2X2)                                       0.03       0.94 r
+  c0/U107/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<12> (cache_cache_id0)                       0.00       0.95 f
+  U568/Y (INVX1)                                          0.00       0.96 r
+  U683/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<12> (out)                                       0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<11>
+            (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U5/Y (OAI21X1)                                       0.04       0.66 r
+  c0/U3/Y (INVX2)                                         0.02       0.68 f
+  c0/U130/Y (NOR2X1)                                      0.03       0.71 r
+  c0/mem_w2/write (memc_Size16_1)                         0.00       0.71 r
+  c0/mem_w2/U94/Y (BUFX2)                                 0.04       0.75 r
+  c0/mem_w2/U2/Y (INVX1)                                  0.02       0.77 f
+  c0/mem_w2/U91/Y (AND2X2)                                0.04       0.81 f
+  c0/mem_w2/U2151/Y (AND2X2)                              0.04       0.85 f
+  c0/mem_w2/data_out<11> (memc_Size16_1)                  0.00       0.85 f
+  c0/U173/Y (AOI22X1)                                     0.02       0.87 r
+  c0/U87/Y (BUFX2)                                        0.03       0.90 r
+  c0/U57/Y (AND2X2)                                       0.03       0.94 r
+  c0/U106/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<11> (cache_cache_id0)                       0.00       0.95 f
+  U567/Y (INVX1)                                          0.00       0.96 r
+  U682/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<11> (out)                                       0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: DataOut<9> (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U5/Y (OAI21X1)                                       0.04       0.66 r
+  c0/U3/Y (INVX2)                                         0.02       0.68 f
+  c0/U130/Y (NOR2X1)                                      0.03       0.71 r
+  c0/mem_w2/write (memc_Size16_1)                         0.00       0.71 r
+  c0/mem_w2/U94/Y (BUFX2)                                 0.04       0.75 r
+  c0/mem_w2/U2/Y (INVX1)                                  0.02       0.77 f
+  c0/mem_w2/U92/Y (AND2X2)                                0.04       0.81 f
+  c0/mem_w2/U2149/Y (AND2X2)                              0.04       0.85 f
+  c0/mem_w2/data_out<9> (memc_Size16_1)                   0.00       0.85 f
+  c0/U169/Y (AOI22X1)                                     0.02       0.87 r
+  c0/U85/Y (BUFX2)                                        0.03       0.90 r
+  c0/U56/Y (AND2X2)                                       0.03       0.94 r
+  c0/U104/Y (INVX1)                                       0.02       0.95 f
+  c0/data_out<9> (cache_cache_id0)                        0.00       0.95 f
+  U565/Y (INVX1)                                          0.00       0.96 r
+  U680/Y (NOR2X1)                                         0.00       0.96 f
+  DataOut<9> (out)                                        0.00       0.96 f
+  data arrival time                                                  0.96
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  output external delay                                  -0.10       0.90
+  data required time                                                 0.90
+  --------------------------------------------------------------------------
+  data required time                                                 0.90
+  data arrival time                                                 -0.96
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m1/reg1[1]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U12/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<1> (memc_Size16_2)                   0.00       0.82 f
+  c0/U15/Y (AOI22X1)                                      0.03       0.85 r
+  c0/U14/Y (BUFX2)                                        0.03       0.88 r
+  c0/U18/Y (AND2X2)                                       0.03       0.92 r
+  c0/U19/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<1> (cache_cache_id0)                        0.00       0.93 f
+  U258/Y (INVX1)                                          0.00       0.93 r
+  U257/Y (OR2X2)                                          0.04       0.97 r
+  U256/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<1> (four_bank_mem)                          0.00       1.00 f
+  mem/m1/data_in<1> (final_memory_2)                      0.00       1.00 f
+  mem/m1/reg1[1]/d (dff_196)                              0.00       1.00 f
+  mem/m1/reg1[1]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m1/reg1[1]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m1/reg1[1]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m1/reg1[1]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m1/reg1[5]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U79/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<5> (memc_Size16_2)                   0.00       0.82 f
+  c0/U161/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U70/Y (BUFX2)                                        0.03       0.88 r
+  c0/U96/Y (AND2X2)                                       0.03       0.92 r
+  c0/U97/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<5> (cache_cache_id0)                        0.00       0.93 f
+  U575/Y (INVX1)                                          0.00       0.93 r
+  U459/Y (OR2X2)                                          0.04       0.97 r
+  U305/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<5> (four_bank_mem)                          0.00       1.00 f
+  mem/m1/data_in<5> (final_memory_2)                      0.00       1.00 f
+  mem/m1/reg1[5]/d (dff_200)                              0.00       1.00 f
+  mem/m1/reg1[5]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m1/reg1[5]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m1/reg1[5]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m1/reg1[5]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m2/reg1[1]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U12/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<1> (memc_Size16_2)                   0.00       0.82 f
+  c0/U15/Y (AOI22X1)                                      0.03       0.85 r
+  c0/U14/Y (BUFX2)                                        0.03       0.88 r
+  c0/U18/Y (AND2X2)                                       0.03       0.92 r
+  c0/U19/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<1> (cache_cache_id0)                        0.00       0.93 f
+  U258/Y (INVX1)                                          0.00       0.93 r
+  U257/Y (OR2X2)                                          0.04       0.97 r
+  U256/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<1> (four_bank_mem)                          0.00       1.00 f
+  mem/m2/data_in<1> (final_memory_1)                      0.00       1.00 f
+  mem/m2/reg1[1]/d (dff_145)                              0.00       1.00 f
+  mem/m2/reg1[1]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m2/reg1[1]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m2/reg1[1]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m2/reg1[1]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m2/reg1[5]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U79/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<5> (memc_Size16_2)                   0.00       0.82 f
+  c0/U161/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U70/Y (BUFX2)                                        0.03       0.88 r
+  c0/U96/Y (AND2X2)                                       0.03       0.92 r
+  c0/U97/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<5> (cache_cache_id0)                        0.00       0.93 f
+  U575/Y (INVX1)                                          0.00       0.93 r
+  U459/Y (OR2X2)                                          0.04       0.97 r
+  U305/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<5> (four_bank_mem)                          0.00       1.00 f
+  mem/m2/data_in<5> (final_memory_1)                      0.00       1.00 f
+  mem/m2/reg1[5]/d (dff_149)                              0.00       1.00 f
+  mem/m2/reg1[5]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m2/reg1[5]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m2/reg1[5]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m2/reg1[5]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m3/reg1[1]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U12/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<1> (memc_Size16_2)                   0.00       0.82 f
+  c0/U15/Y (AOI22X1)                                      0.03       0.85 r
+  c0/U14/Y (BUFX2)                                        0.03       0.88 r
+  c0/U18/Y (AND2X2)                                       0.03       0.92 r
+  c0/U19/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<1> (cache_cache_id0)                        0.00       0.93 f
+  U258/Y (INVX1)                                          0.00       0.93 r
+  U257/Y (OR2X2)                                          0.04       0.97 r
+  U256/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<1> (four_bank_mem)                          0.00       1.00 f
+  mem/m3/data_in<1> (final_memory_0)                      0.00       1.00 f
+  mem/m3/reg1[1]/d (dff_94)                               0.00       1.00 f
+  mem/m3/reg1[1]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m3/reg1[1]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m3/reg1[1]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m3/reg1[1]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m3/reg1[5]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U79/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<5> (memc_Size16_2)                   0.00       0.82 f
+  c0/U161/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U70/Y (BUFX2)                                        0.03       0.88 r
+  c0/U96/Y (AND2X2)                                       0.03       0.92 r
+  c0/U97/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<5> (cache_cache_id0)                        0.00       0.93 f
+  U575/Y (INVX1)                                          0.00       0.93 r
+  U459/Y (OR2X2)                                          0.04       0.97 r
+  U305/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<5> (four_bank_mem)                          0.00       1.00 f
+  mem/m3/data_in<5> (final_memory_0)                      0.00       1.00 f
+  mem/m3/reg1[5]/d (dff_98)                               0.00       1.00 f
+  mem/m3/reg1[5]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m3/reg1[5]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m3/reg1[5]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m3/reg1[5]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m1/reg1[3]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U2135/Y (AND2X2)                              0.04       0.82 f
+  c0/mem_w1/data_out<3> (memc_Size16_2)                   0.00       0.82 f
+  c0/U156/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U69/Y (BUFX2)                                        0.03       0.88 r
+  c0/U94/Y (AND2X2)                                       0.03       0.92 r
+  c0/U95/Y (INVX1)                                        0.02       0.93 f
+  c0/data_out<3> (cache_cache_id0)                        0.00       0.93 f
+  U574/Y (INVX1)                                          0.00       0.93 r
+  U463/Y (OR2X2)                                          0.04       0.97 r
+  U306/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<3> (four_bank_mem)                          0.00       1.00 f
+  mem/m1/data_in<3> (final_memory_2)                      0.00       1.00 f
+  mem/m1/reg1[3]/d (dff_198)                              0.00       1.00 f
+  mem/m1/reg1[3]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m1/reg1[3]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m1/reg1[3]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m1/reg1[3]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+  Startpoint: statereg/reg16bits[12]/state_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mem/m1/reg1[8]/state_reg
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  statereg/reg16bits[12]/state_reg/CLK (DFFPOSX1)         0.00 #     0.00 r
+  statereg/reg16bits[12]/state_reg/Q (DFFPOSX1)           0.10       0.10 f
+  statereg/reg16bits[12]/q (dff_57)                       0.00       0.10 f
+  statereg/read_data<12> (register16)                     0.00       0.10 f
+  U262/Y (INVX1)                                          0.01       0.11 r
+  U261/Y (NAND3X1)                                        0.02       0.13 f
+  U260/Y (INVX1)                                          0.01       0.13 r
+  U265/Y (INVX1)                                          0.01       0.15 f
+  U272/Y (INVX1)                                          0.01       0.16 r
+  U267/Y (AND2X2)                                         0.03       0.19 r
+  U270/Y (NAND2X1)                                        0.01       0.20 f
+  U286/Y (INVX1)                                          0.00       0.20 r
+  U282/Y (INVX1)                                          0.02       0.22 f
+  U273/Y (NAND3X1)                                        0.03       0.25 r
+  U285/Y (BUFX2)                                          0.04       0.29 r
+  U291/Y (AND2X2)                                         0.03       0.32 r
+  U290/Y (INVX1)                                          0.01       0.33 f
+  U289/Y (NAND2X1)                                        0.02       0.36 r
+  c0/write (cache_cache_id0)                              0.00       0.36 r
+  c0/U11/Y (BUFX2)                                        0.04       0.39 r
+  c0/U8/Y (NAND3X1)                                       0.01       0.40 f
+  c0/U7/Y (INVX1)                                         0.01       0.42 r
+  c0/mem_tg/write (memc_Size5)                            0.00       0.42 r
+  c0/mem_tg/U5/Y (NOR2X1)                                 0.01       0.43 f
+  c0/mem_tg/U3/Y (INVX1)                                  0.00       0.43 r
+  c0/mem_tg/U2/Y (INVX1)                                  0.01       0.44 f
+  c0/mem_tg/U4/Y (NAND2X1)                                0.02       0.46 r
+  c0/mem_tg/U7/Y (INVX1)                                  0.03       0.49 f
+  c0/mem_tg/data_out<0> (memc_Size5)                      0.00       0.49 f
+  c0/U27/Y (XNOR2X1)                                      0.03       0.52 f
+  c0/U23/Y (OR2X2)                                        0.05       0.57 f
+  c0/U22/Y (INVX1)                                        0.00       0.57 r
+  c0/U24/Y (NAND3X1)                                      0.01       0.58 f
+  c0/U30/Y (BUFX2)                                        0.04       0.62 f
+  c0/U36/Y (OAI21X1)                                      0.04       0.66 r
+  c0/U42/Y (INVX1)                                        0.03       0.68 f
+  c0/U38/Y (NOR3X1)                                       0.03       0.71 r
+  c0/mem_w1/write (memc_Size16_2)                         0.00       0.71 r
+  c0/mem_w1/U76/Y (INVX2)                                 0.02       0.73 f
+  c0/mem_w1/U75/Y (AND2X2)                                0.04       0.78 f
+  c0/mem_w1/U80/Y (AND2X2)                                0.04       0.82 f
+  c0/mem_w1/data_out<8> (memc_Size16_2)                   0.00       0.82 f
+  c0/U168/Y (AOI22X1)                                     0.03       0.85 r
+  c0/U72/Y (BUFX2)                                        0.03       0.88 r
+  c0/U100/Y (AND2X2)                                      0.03       0.92 r
+  c0/U101/Y (INVX1)                                       0.02       0.93 f
+  c0/data_out<8> (cache_cache_id0)                        0.00       0.93 f
+  U577/Y (INVX1)                                          0.00       0.93 r
+  U444/Y (OR2X2)                                          0.04       0.97 r
+  U303/Y (INVX2)                                          0.02       1.00 f
+  mem/data_in<8> (four_bank_mem)                          0.00       1.00 f
+  mem/m1/data_in<8> (final_memory_2)                      0.00       1.00 f
+  mem/m1/reg1[8]/d (dff_203)                              0.00       1.00 f
+  mem/m1/reg1[8]/U3/Y (INVX1)                             0.00       1.00 r
+  mem/m1/reg1[8]/U4/Y (NOR2X1)                            0.01       1.00 f
+  mem/m1/reg1[8]/state_reg/D (DFFPOSX1)                   0.00       1.00 f
+  data arrival time                                                  1.00
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  mem/m1/reg1[8]/state_reg/CLK (DFFPOSX1)                 0.00       1.00 r
+  library setup time                                     -0.05       0.95
+  data required time                                                 0.95
+  --------------------------------------------------------------------------
+  data required time                                                 0.95
+  data arrival time                                                 -1.00
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.06
+
+
+1

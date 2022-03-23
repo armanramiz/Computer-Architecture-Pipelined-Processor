@@ -1,0 +1,16 @@
+alu.v
+CLA_4Adder.v
+CLA_16Adder.v
+control_logic.v
+idecode.v
+dff.v
+iexecute.v
+ifetch.v
+shifter.v
+clkrst.v
+imemory.v
+memory2c.syn.v
+proc.v
+rf.v
+register16.v
+iwriteback.v

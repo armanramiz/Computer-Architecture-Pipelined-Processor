@@ -1,0 +1,40 @@
+Information: Updating graph... (UID-83)
+Warning: Design 'proc' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+Information: Timing loop detected. (OPT-150)
+	execute0/U41/A execute0/U41/Y execute0/U3/A execute0/U3/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'execute0/U41'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : reference
+Design : proc
+Version: Q-2019.12-SP3
+Date   : Sun Mar 21 14:03:20 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+BUFX2              gscl45nm       2.346500      13     30.504499  
+BUFX4              gscl45nm       2.815800       1      2.815800  
+INVX1              gscl45nm       1.407900       2      2.815800  
+INVX2              gscl45nm       1.877200       1      1.877200  
+idecode                        3837.466036       1   3837.466036  h, n
+iexecute                       4087.133619       1   4087.133619  h, n
+ifetch                        17290.419574       1  17290.419574  h, n
+imemory                       16650.294378       1  16650.294378  h, n
+iwriteback                      244.974596       1    244.974596  h
+register16_8                    312.084495       1    312.084495  h, n
+-----------------------------------------------------------------------------
+Total 10 references                                 42460.385997
+1

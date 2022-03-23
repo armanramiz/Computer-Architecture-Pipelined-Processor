@@ -1,0 +1,47 @@
+Information: Updating graph... (UID-83)
+Warning: Design 'mem_system' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : reference
+Design : mem_system
+Version: Q-2019.12-SP3
+Date   : Fri Apr 30 11:46:50 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             gscl45nm       2.346500      12     28.157999  
+AND2X2             gscl45nm       2.815800      47    132.342598  
+AOI21X1            gscl45nm       2.815800       4     11.263200  
+AOI22X1            gscl45nm       3.285100      17     55.846700  
+BUFX2              gscl45nm       2.346500      30     70.394998  
+BUFX4              gscl45nm       2.815800       2      5.631600  
+INVX1              gscl45nm       1.407900     205    288.619495  
+INVX2              gscl45nm       1.877200      14     26.280800  
+INVX8              gscl45nm       3.285100       1      3.285100  
+LATCH              gscl45nm       5.162300       2     10.324600  n
+MUX2X1             gscl45nm       3.754400       2      7.508800  
+NAND2X1            gscl45nm       1.877200      11     20.649200  
+NAND3X1            gscl45nm       2.346500      18     42.236999  
+NOR2X1             gscl45nm       2.346500      29     68.048498  
+NOR3X1             gscl45nm       2.815800      13     36.605399  
+OAI21X1            gscl45nm       2.815800      17     47.868599  
+OR2X1              gscl45nm       2.346500       8     18.771999  
+OR2X2              gscl45nm       2.815800      14     39.421199  
+cache_cache_id0               46767.621410       1  46767.621410  h, n
+four_bank_mem                 22478.530988       1  22478.530988  h, n
+register16                      287.680894       1    287.680894  h, n
+-----------------------------------------------------------------------------
+Total 21 references                                 70447.091075
+1

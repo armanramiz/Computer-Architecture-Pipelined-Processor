@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : cell
+Design : proc
+Version: Q-2019.12-SP3
+Date   : Sun Mar 21 14:03:20 2021
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+U3                        BUFX2           gscl45nm        2.346500  
+U4                        BUFX2           gscl45nm        2.346500  
+U5                        BUFX2           gscl45nm        2.346500  
+U6                        BUFX2           gscl45nm        2.346500  
+U7                        BUFX2           gscl45nm        2.346500  
+U8                        BUFX2           gscl45nm        2.346500  
+U9                        BUFX2           gscl45nm        2.346500  
+U10                       BUFX2           gscl45nm        2.346500  
+U11                       BUFX2           gscl45nm        2.346500  
+U12                       BUFX2           gscl45nm        2.346500  
+U13                       BUFX2           gscl45nm        2.346500  
+U14                       BUFX2           gscl45nm        2.346500  
+U15                       BUFX2           gscl45nm        2.346500  
+U16                       BUFX4           gscl45nm        2.815800  
+U17                       INVX2           gscl45nm        1.877200  
+U18                       INVX1           gscl45nm        1.407900  
+U19                       INVX1           gscl45nm        1.407900  
+decode0                   idecode                         3837.466036
+                                                                    h, n
+dut                       ifetch                          17290.419574
+                                                                    h, n
+execute0                  iexecute                        4087.133619
+                                                                    h, n
+memory0                   imemory                         16650.294378
+                                                                    h, n
+pcReg                     register16_8                    312.084495
+                                                                    h, n
+writeback0                iwriteback                      244.974596
+                                                                    h
+--------------------------------------------------------------------------------
+Total 23 cells                                            42460.385997
+1

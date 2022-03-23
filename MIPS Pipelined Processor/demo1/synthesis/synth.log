@@ -1,0 +1,1325 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version Q-2019.12-SP3 for linux64 - Apr 21, 2020 
+
+                    Copyright (c) 1988 - 2020 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+echo "********** CS552 Reading files begin ********************"
+********** CS552 Reading files begin ********************
+set my_verilog_files [list alu.v CLA_4Adder.v CLA_16Adder.v control_logic.v idecode.v dff.v iexecute.v ifetch.v shifter.v clkrst.v imemory.v memory2c.syn.v proc.v rf.v register16.v iwriteback.v  ]
+alu.v CLA_4Adder.v CLA_16Adder.v control_logic.v idecode.v dff.v iexecute.v ifetch.v shifter.v clkrst.v imemory.v memory2c.syn.v proc.v rf.v register16.v iwriteback.v
+set my_toplevel proc
+proc
+define_design_lib WORK -path ./WORK
+1
+analyze -f verilog $my_verilog_files
+Running PRESTO HDLC
+Compiling source file ./alu.v
+Compiling source file ./CLA_4Adder.v
+Compiling source file ./CLA_16Adder.v
+Compiling source file ./control_logic.v
+Compiling source file ./idecode.v
+Compiling source file ./dff.v
+Warning:  ./dff.v:15: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ./iexecute.v
+Compiling source file ./ifetch.v
+Compiling source file ./shifter.v
+Compiling source file ./clkrst.v
+Compiling source file ./imemory.v
+Warning:  Little argument or return value checking implemented for system task or function '$stop'. (VER-209)
+Warning:  Little argument or return value checking implemented for system task or function '$finish'. (VER-209)
+Warning:  ./clkrst.v:22: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./clkrst.v:30: delay controls are ignored for synthesis. (VER-176)
+Warning:  ./clkrst.v:34: Unsupported system task '$stop' will be ignored for synthesis. (VER-274)
+Warning:  ./clkrst.v:42: Unsupported system task '$finish' will be ignored for synthesis. (VER-274)
+Compiling source file ./memory2c.syn.v
+Compiling source file ./proc.v
+Warning:  ./memory2c.syn.v:61: The statements in initial blocks are ignored. (VER-281)
+Warning:  ./proc.v:49: the undeclared symbol 'memToReg' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file ./rf.v
+Compiling source file ./register16.v
+Compiling source file ./iwriteback.v
+Presto compilation completed successfully.
+Loading db file '/u/k/a/karu/courses/cs552/cad/Synopsys_Libraries/libs/gscl45nm.db'
+1
+elaborate $my_toplevel -architecture verilog
+Loading db file '/s/synopsys-2020_06_08/@sys/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/s/synopsys-2020_06_08/@sys/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'gscl45nm'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (proc)
+Elaborated 1 design.
+Current design is now 'proc'.
+Information: Building the design 'register16'. (HDL-193)
+Presto compilation completed successfully. (register16)
+Information: Building the design 'ifetch'. (HDL-193)
+Presto compilation completed successfully. (ifetch)
+Information: Building the design 'idecode'. (HDL-193)
+Presto compilation completed successfully. (idecode)
+Information: Building the design 'iexecute'. (HDL-193)
+
+Statistics for case statements in always block at line 47 in file
+	'./iexecute.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            48            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine iexecute line 47 in file
+		'./iexecute.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|        B_reg        | Latch |  16   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (iexecute)
+Information: Building the design 'imemory'. (HDL-193)
+Presto compilation completed successfully. (imemory)
+Information: Building the design 'iwriteback'. (HDL-193)
+Presto compilation completed successfully. (iwriteback)
+Information: Building the design 'dff'. (HDL-193)
+
+Inferred memory devices in process
+	in routine dff line 17 in file
+		'./dff.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      state_reg      | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (dff)
+Information: Building the design 'CLA_16Adder'. (HDL-193)
+Presto compilation completed successfully. (CLA_16Adder)
+Information: Building the design 'memory2c'. (HDL-193)
+
+Inferred memory devices in process
+	in routine memory2c line 71 in file
+		'./memory2c.syn.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop |  512  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|   memory2c/60    |   64   |    8    |      6       |
+|   memory2c/60    |   64   |    8    |      6       |
+======================================================
+Presto compilation completed successfully. (memory2c)
+Information: Building the design 'control_logic'. (HDL-193)
+Warning:  ./control_logic.v:118: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 97 in file
+	'./control_logic.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           118            |    auto/auto     |
+|           363            |    auto/auto     |
+|           443            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (control_logic)
+Information: Building the design 'rf'. (HDL-193)
+Presto compilation completed successfully. (rf)
+Information: Building the design 'alu'. (HDL-193)
+
+Statistics for case statements in always block at line 64 in file
+	'./alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            65            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine alu line 64 in file
+		'./alu.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|       Out_reg       | Latch |  16   |  Y  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (alu)
+Information: Building the design 'CLA_4Adder'. (HDL-193)
+Presto compilation completed successfully. (CLA_4Adder)
+Information: Building the design 'shifter'. (HDL-193)
+Warning:  ./shifter.v:21: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 20 in file
+	'./shifter.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (shifter)
+1
+echo "********** CS552 Reading files end ********************"
+********** CS552 Reading files end ********************
+current_design proc
+Current design is 'proc'.
+{proc}
+#/* The name of the clock pin. If no clock-pin     */
+#/* exists, pick anything                          */
+set my_clock_pin clk
+clk
+#/* Target frequency in MHz for optimization       */
+set my_clk_freq_MHz 1000
+1000
+#/* Delay of input signals (Clock-to-Q, Package etc.)  */
+set my_input_delay_ns 0.1
+0.1
+#/* Reserved time for output signals (Holdtime etc.)   */
+set my_output_delay_ns 0.1
+0.1
+#/**************************************************/
+#/* No modifications needed below                  */
+#/**************************************************/
+set verilogout_show_unconnected_pins "true"
+true
+# analyze -f verilog $my_verilog_files
+# elaborate $my_toplevel -architecture verilog
+# current_design $my_toplevel
+report_hierarchy 
+ 
+****************************************
+Report : hierarchy
+Design : proc
+Version: Q-2019.12-SP3
+Date   : Sun Mar 21 14:01:07 2021
+****************************************
+
+Information: This design contains unmapped logic. (RPT-7)
+
+proc
+    GTECH_NOT                                    gtech
+    idecode
+        GTECH_AND2                               gtech
+        GTECH_BUF                                gtech
+        GTECH_NOT                                gtech
+        GTECH_OR2                                gtech
+        control_logic
+            GTECH_AND2                           gtech
+            GTECH_BUF                            gtech
+            GTECH_NOT                            gtech
+            GTECH_OR2                            gtech
+        rf
+            GTECH_AND2                           gtech
+            GTECH_BUF                            gtech
+            GTECH_NOT                            gtech
+            GTECH_OR2                            gtech
+            register16
+                GTECH_BUF                        gtech
+                GTECH_NOT                        gtech
+                dff
+                    GTECH_BUF                    gtech
+                    GTECH_NOT                    gtech
+    iexecute
+        CLA_16Adder
+            CLA_4Adder
+                GTECH_AND2                       gtech
+                GTECH_OR2                        gtech
+                GTECH_XOR2                       gtech
+            GTECH_BUF                            gtech
+            GTECH_NOT                            gtech
+            GTECH_XOR2                           gtech
+        GTECH_AND2                               gtech
+        GTECH_BUF                                gtech
+        GTECH_NOT                                gtech
+        GTECH_OR2                                gtech
+        alu
+            CLA_16Adder
+                ...
+            GTECH_AND2                           gtech
+            GTECH_BUF                            gtech
+            GTECH_NOT                            gtech
+            GTECH_OR2                            gtech
+            GTECH_XOR2                           gtech
+            shifter
+                GTECH_AND2                       gtech
+                GTECH_BUF                        gtech
+                GTECH_NOT                        gtech
+                GTECH_OR2                        gtech
+    ifetch
+        CLA_16Adder
+            ...
+        memory2c
+            GTECH_AND2                           gtech
+            GTECH_BUF                            gtech
+            GTECH_NOT                            gtech
+            GTECH_OR2                            gtech
+    imemory
+        GTECH_OR2                                gtech
+        memory2c
+            ...
+    iwriteback
+        GTECH_AND2                               gtech
+        GTECH_BUF                                gtech
+        GTECH_NOT                                gtech
+        GTECH_OR2                                gtech
+    register16
+        ...
+1
+link
+
+  Linking design 'proc'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  gscl45nm (library)          /u/k/a/karu/courses/cs552/cad/Synopsys_Libraries/libs/gscl45nm.db
+
+1
+uniquify
+Information: Uniquified 9 instances of design 'register16'. (OPT-1056)
+Information: Uniquified 144 instances of design 'dff'. (OPT-1056)
+Information: Uniquified 3 instances of design 'CLA_16Adder'. (OPT-1056)
+Information: Uniquified 2 instances of design 'memory2c'. (OPT-1056)
+Information: Uniquified 12 instances of design 'CLA_4Adder'. (OPT-1056)
+1
+set my_period [expr 1000 / $my_clk_freq_MHz]
+1
+set find_clock [ find port [list $my_clock_pin] ]
+{clk}
+if {  $find_clock != [list] } {
+   set clk_name $my_clock_pin
+   create_clock -period $my_period $clk_name
+} else {
+   set clk_name vclk
+   create_clock -period $my_period -name $clk_name
+} 
+1
+set_driving_cell  -lib_cell INVX1  [all_inputs]
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+1
+set_input_delay $my_input_delay_ns -clock $clk_name [remove_from_collection [all_inputs] $my_clock_pin]
+1
+set_output_delay $my_output_delay_ns -clock $clk_name [all_outputs]
+1
+compile 
+Warning: Setting attribute 'fix_multiple_port_nets' on design 'proc'. (UIO-59)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.3 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 75 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iwriteback'
+  Processing 'memory2c_0'
+  Processing 'imemory'
+  Processing 'CLA_4Adder_0'
+  Processing 'CLA_16Adder_0'
+  Processing 'shifter'
+  Processing 'alu'
+  Processing 'iexecute'
+  Processing 'dff_0'
+  Processing 'register16_0'
+  Processing 'rf'
+  Processing 'control_logic'
+  Processing 'idecode'
+  Processing 'ifetch'
+  Processing 'register16_8'
+  Processing 'proc'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	execute0/U41/A execute0/U41/Y execute0/U3/A execute0/U3/Y 
+Warning: Disabling timing arc between pins 'A' and 'Y' on cell 'execute0/U41'
+         to break a timing loop. (OPT-314)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'memory2c_0_DW01_inc_0'
+  Processing 'memory2c_1_DW01_inc_0_DW01_inc_1'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:15   34559.7      2.02     926.4      23.1                          
+    0:00:15   34559.7      2.02     926.4      23.1                          
+    0:00:18   36150.2      0.76     375.4      17.9                          
+    0:00:18   36150.2      0.76     375.4      17.9                          
+    0:00:18   36150.2      0.76     375.4      17.9                          
+    0:00:18   36150.2      0.76     375.4      17.9                          
+    0:00:18   36150.2      0.76     375.4      17.9                          
+    0:00:20   33934.1      0.95     607.0      16.7                          
+    0:00:21   33983.9      0.88     542.4      16.7                          
+    0:00:21   33971.7      0.81     428.5      16.7                          
+    0:00:21   33985.3      0.78     426.0      16.7                          
+    0:00:21   33982.0      0.77     425.1      16.7                          
+    0:00:21   33986.7      0.78     425.1      16.7                          
+    0:00:21   33986.2      0.77     425.1      16.7                          
+    0:00:22   33985.3      0.77     424.5      16.7                          
+    0:00:22   33984.4      0.77     425.1      16.7                          
+    0:00:22   33985.3      0.77     424.5      16.7                          
+    0:00:22   33985.3      0.77     424.5      16.7                          
+    0:00:22   33985.3      0.77     424.5      16.7                          
+    0:00:22   33985.3      0.77     424.5      16.7                          
+    0:00:25   34203.1      1.11     486.2      14.8                          
+    0:00:29   34373.4      1.13     506.4      13.2                          
+    0:00:32   34446.6      1.14     514.4      13.0                          
+    0:00:35   34511.4      1.15     508.7      12.9                          
+    0:00:36   34560.7      1.15     511.8      12.8                          
+    0:00:37   34594.4      1.15     512.1      12.8                          
+    0:00:37   34629.2      1.15     512.4      12.7                          
+    0:00:37   34660.2      1.15     513.0      12.7                          
+    0:00:37   34691.1      1.15     513.3      12.6                          
+    0:00:38   34709.4      1.15     513.5      12.6                          
+    0:00:38   34709.4      1.15     513.5      12.6                          
+    0:00:38   35014.0      0.84     441.3      12.6 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:38   35090.0      0.79     438.7      12.6 pcReg/reg16bits[0]/state_reg/D
+    0:00:39   35104.1      0.79     435.1      12.6 pcReg/reg16bits[0]/state_reg/D
+    0:00:39   35290.4      0.77     465.2      12.7 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:39   35313.4      0.75     464.2      12.7 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:40   35312.9      0.74     456.1      12.7                          
+    0:00:40   35323.7      0.73     454.9      12.6                          
+    0:00:40   35331.7      0.72     454.5      12.6                          
+    0:00:40   35353.8      0.71     428.7      12.6                          
+    0:00:40   35368.3      0.71     428.6      12.6                          
+    0:00:40   35378.2      0.70     428.1      12.6                          
+    0:00:40   35404.9      0.70     427.9      12.6                          
+    0:00:40   35431.2      0.70     427.7      12.6                          
+    0:00:40   35455.6      0.70     427.5      12.6                          
+    0:00:40   35460.3      0.69     427.1      12.6                          
+    0:00:41   35465.5      0.68     418.1      12.6                          
+    0:00:41   35480.5      0.68     417.7      12.6                          
+    0:00:41   35490.8      0.67     417.8      12.6                          
+    0:00:41   35469.2      0.67     417.7      12.7                          
+    0:00:41   35464.5      0.67     417.4      12.7                          
+    0:00:41   35478.6      0.66     416.5      12.7                          
+    0:00:41   35491.3      0.66     416.3      12.6                          
+    0:00:41   35503.5      0.66     416.1      12.6                          
+    0:00:41   35508.2      0.65     415.9      12.6                          
+    0:00:42   35515.2      0.65     378.0      12.6                          
+    0:00:42   35517.6      0.65     377.7      12.6                          
+    0:00:42   35529.8      0.64     377.9      12.6                          
+    0:00:42   35530.7      0.64     377.3      12.7                          
+    0:00:42   35542.4      0.64     377.1      12.7                          
+    0:00:42   35549.9      0.63     376.8      12.7                          
+    0:00:42   35557.0      0.63     376.6      12.7                          
+    0:00:42   35557.0      0.63     376.7      12.7                          
+    0:00:42   35563.6      0.62     375.9      12.7                          
+    0:00:43   35565.4      0.62     375.8      12.7                          
+    0:00:43   35567.3      0.62     373.7      12.7                          
+    0:00:43   35573.4      0.61     373.6      12.7                          
+    0:00:43   35581.4      0.61     373.5      12.7                          
+    0:00:43   35585.1      0.61     371.5      12.7                          
+    0:00:43   35594.1      0.61     369.5      12.7                          
+    0:00:43   35601.6      0.60     369.3      12.7                          
+    0:00:44   35613.3      0.60     367.8      12.7                          
+    0:00:44   35618.0      0.60     366.5      12.7                          
+    0:00:44   35617.1      0.60     366.4      12.7                          
+    0:00:44   35625.5      0.60     366.3      12.7                          
+    0:00:44   35633.5      0.60     366.1      12.7                          
+    0:00:44   35636.3      0.60     365.9      12.7                          
+    0:00:44   35641.5      0.60     359.8      12.7                          
+    0:00:45   35639.1      0.60     359.7      12.7                          
+    0:00:45   35654.1      0.60     358.2      12.7                          
+    0:00:45   35669.1      0.60     358.1      12.7                          
+    0:00:45   35668.2      0.60     357.9      12.7                          
+    0:00:45   35670.6      0.60     358.1      12.7                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:45   35670.6      0.60     358.1      12.7                          
+    0:00:45   35674.8      0.60     358.1      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:45   35684.6      0.59     357.9      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:45   35685.1      0.58     357.8      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:45   35689.3      0.58     357.8      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:45   35693.5      0.58     357.8      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:46   35700.1      0.58     357.8      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:46   35704.3      0.58     357.7      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:46   35715.6      0.57     358.3      12.7 pcReg/reg16bits[13]/state_reg/D
+    0:00:46   35713.3      0.57     358.4      12.7 pcReg/reg16bits[3]/state_reg/D
+    0:00:46   35707.2      0.55     353.2      12.7 decode0/register/reg1/reg16bits[7]/state_reg/D
+    0:00:46   35715.1      0.55     343.7      12.7 pcReg/reg16bits[1]/state_reg/D
+    0:00:46   35720.8      0.55     343.6      12.7 pcReg/reg16bits[1]/state_reg/D
+    0:00:46   35727.3      0.55     343.6      12.7 pcReg/reg16bits[3]/state_reg/D
+    0:00:47   35730.6      0.54     342.8      12.7 decode0/register/reg0/reg16bits[1]/state_reg/D
+    0:00:47   35768.2      0.54     346.5      12.8 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:47   35772.9      0.54     342.5      12.8 decode0/register/reg0/reg16bits[2]/state_reg/D
+    0:00:47   35776.1      0.54     342.4      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:47   35781.8      0.54     342.1      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35791.2      0.54     342.0      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35790.7      0.54     341.7      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35801.0      0.53     338.3      12.8 decode0/register/reg1/reg16bits[4]/state_reg/D
+    0:00:48   35814.2      0.53     338.1      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35809.0      0.53     338.1      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35810.9      0.53     337.9      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35809.5      0.53     337.9      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35816.5      0.53     337.8      12.8 decode0/register/reg0/reg16bits[13]/state_reg/D
+    0:00:48   35824.0      0.53     335.9      12.8 pcReg/reg16bits[7]/state_reg/D
+    0:00:48   35829.2      0.53     335.6      12.8 pcReg/reg16bits[3]/state_reg/D
+    0:00:48   35839.5      0.53     335.1      12.8 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:49   35842.8      0.52     330.5      12.8 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:49   35857.8      0.52     327.4      12.8 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:00:49   35859.2      0.52     326.7      12.8 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:49   35864.8      0.52     326.3      12.8 pcReg/reg16bits[2]/state_reg/D
+    0:00:49   35867.2      0.51     322.8      12.8 pcReg/reg16bits[2]/state_reg/D
+    0:00:49   35873.3      0.51     322.8      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:49   35875.2      0.51     322.8      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:49   35877.5      0.51     322.0      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:49   35881.3      0.51     322.0      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   35916.0      0.51     321.7      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   35934.8      0.51     319.4      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   35937.1      0.51     319.0      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   36030.5      0.50     317.6      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   36038.5      0.50     317.2      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:50   36039.9      0.50     316.9      12.8 pcReg/reg16bits[12]/state_reg/D
+    0:00:51   36043.6      0.50     317.0      12.8 decode0/register/reg0/reg16bits[1]/state_reg/D
+    0:00:51   36169.4      0.50     317.0      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:51   36169.4      0.50     317.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:51   36176.5      0.50     317.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:51   36188.2      0.50     316.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:51   36222.0      0.50     311.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:51   36226.2      0.50     310.4      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:00:51   36227.6      0.50     310.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36226.7      0.50     310.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36228.1      0.50     310.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36228.1      0.50     309.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36235.6      0.49     309.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36235.1      0.49     308.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36235.1      0.49     308.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:52   36235.1      0.49     308.6      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:52   36245.4      0.49     308.6      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36250.6      0.49     308.5      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36251.1      0.49     307.5      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:53   36229.5      0.49     307.5      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36227.1      0.49     307.5      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36226.7      0.49     307.5      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36230.4      0.49     304.3      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:00:53   36223.9      0.49     304.2      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36235.6      0.49     303.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:53   36236.1      0.49     303.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36238.9      0.48     303.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36242.6      0.48     302.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36245.4      0.48     302.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36245.9      0.48     302.6      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:54   36241.2      0.48     302.6      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36253.9      0.48     302.1      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:54   36251.5      0.48     301.1      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:54   36253.0      0.48     301.1      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:54   36246.4      0.48     301.0      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36250.1      0.48     297.1      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36260.9      0.48     295.4      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36259.5      0.48     295.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36267.5      0.48     295.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36264.2      0.47     295.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:55   36266.1      0.47     295.3      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:56   36264.7      0.47     294.8      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:56   36264.7      0.47     294.7      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:56   36295.7      0.47     293.9      12.9 memory0/memory/mem_reg<4><0>/D
+    0:00:56   36306.5      0.47     292.5      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:56   36327.1      0.47     292.4      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:56   36329.5      0.47     292.3      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:56   36337.4      0.46     291.8      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:57   36346.8      0.46     291.3      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:57   36358.5      0.46     291.1      12.9 pcReg/reg16bits[13]/state_reg/D
+    0:00:57   36399.4      0.46     290.9      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:57   36400.8      0.46     290.9      12.9 pcReg/reg16bits[12]/state_reg/D
+    0:00:57   36406.4      0.46     290.5      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:57   36411.6      0.46     290.5      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:00:57   36421.4      0.46     289.3      12.9 memory0/memory/mem_reg<37><0>/D
+    0:00:57   36428.9      0.45     288.6      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:58   36434.1      0.45     287.7      12.9 memory0/memory/mem_reg<54><0>/D
+    0:00:58   36433.2      0.45     287.5      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:58   36434.6      0.45     287.3      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:58   36443.5      0.45     287.1      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:58   36448.2      0.45     286.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:58   36454.3      0.45     281.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:58   36438.3      0.45     281.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:59   36438.3      0.45     281.0      12.9 decode0/register/reg0/reg16bits[2]/state_reg/D
+    0:00:59   36435.5      0.45     280.9      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:59   36454.3      0.45     280.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:59   36460.4      0.45     280.6      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:59   36463.2      0.44     280.6      12.9 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:00:59   36551.0      0.44     280.5      12.9 decode0/register/reg0/reg16bits[3]/state_reg/D
+    0:00:59   36553.8      0.44     280.5      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:00:59   36555.2      0.44     280.4      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:00   36581.5      0.44     279.2      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:00   36583.8      0.44     279.2      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:00   36582.4      0.44     275.8      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:00   36595.1      0.44     278.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:00   36595.1      0.44     277.9      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:00   36594.1      0.44     276.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:00   36598.8      0.44     275.9      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36602.6      0.44     275.9      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36598.8      0.44     275.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36599.3      0.44     275.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36600.2      0.44     275.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36607.3      0.44     275.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36605.4      0.44     273.8      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:01   36607.7      0.43     273.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:01   36609.6      0.43     273.6      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36603.1      0.43     273.5      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36606.3      0.43     270.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36604.9      0.43     270.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36606.8      0.43     270.0      12.9 decode0/register/reg0/reg16bits[15]/state_reg/D
+    0:01:02   36602.1      0.43     270.0      12.9 decode0/register/reg1/reg16bits[5]/state_reg/D
+    0:01:02   36601.2      0.43     270.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36599.8      0.43     270.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:02   36608.7      0.43     269.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36608.7      0.43     269.8      12.9 decode0/register/reg0/reg16bits[1]/state_reg/D
+    0:01:03   36614.8      0.43     269.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36623.2      0.43     269.6      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36626.5      0.43     269.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36635.0      0.43     269.1      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:03   36640.1      0.43     268.7      12.9 decode0/register/reg0/reg16bits[9]/state_reg/D
+    0:01:03   36642.5      0.43     268.5      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36644.4      0.43     268.4      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36642.5      0.43     268.4      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36644.4      0.43     268.3      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:03   36652.3      0.43     268.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36651.4      0.43     268.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36690.3      0.43     267.9      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36693.2      0.43     267.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36697.4      0.43     267.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36698.8      0.43     267.8      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36699.3      0.42     267.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:04   36701.6      0.42     267.7      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:04   36701.6      0.42     267.7      12.9 decode0/register/reg1/reg16bits[5]/state_reg/D
+    0:01:04   36704.4      0.42     267.7      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:04   36701.1      0.42     267.7      12.9 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:05   36705.4      0.42     265.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:05   36706.8      0.42     265.7      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:05   36704.4      0.42     266.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:05   36704.0      0.42     266.1      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:05   36704.9      0.42     266.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:06   36704.0      0.42     266.0      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:06   36698.8      0.42     265.4      12.9 pcReg/reg16bits[15]/state_reg/D
+    0:01:06   36698.8      0.42     265.4      12.9                          
+    0:01:07   36698.8      0.42     265.4      12.9                          
+
+
+  Beginning Design Rule Fixing  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:07   36698.8      0.42     265.4      12.9                          
+    0:01:07   36773.9      0.42     265.3      12.7 dut/iMem/net56715        
+    0:01:07   36857.4      0.42     265.4      12.6 execute0/alu/add/adder4/net43560
+    0:01:07   36873.8      0.42     265.4      12.6 decode0/register/net44373
+    0:01:07   36922.6      0.42     265.2      12.5 execute0/adder/adder3/net43772
+    0:01:07   36942.4      0.42     265.1      12.5 execute0/net43889        
+    0:01:07   36952.7      0.42     265.1      12.5 dut/pc_plus2/adder2/net46238
+    0:01:07   36998.7      0.42     264.4      12.4 memory0/memory/net42090  
+    0:01:07   37037.2      0.42     263.4      12.4 memory0/memory/net42752  
+    0:01:07   37070.5      0.42     263.4      12.3 execute0/alu/add/adder4/net43569
+    0:01:08   37136.6      0.42     262.1      12.3 memory0/memory/net43165  
+    0:01:08   37231.4      0.42     261.2      12.2 dut/iMem/net58491        
+    0:01:08   37299.5      0.42     259.4      12.1 memory0/memory/net42558  
+    0:01:08   37365.2      0.42     257.6      12.1 memory0/memory/C2243/net48352
+    0:01:08   37368.5      0.42     257.6      12.1 dut/pc_plus2/n1          
+    0:01:08   37364.3      0.42     256.3      12.0 dut/iMem/C2243/net46141  
+    0:01:08   37364.3      0.42     256.3      12.0 dut/iMem/C2242/net44898  
+    0:01:08   37367.1      0.42     256.2      12.0 memory0/memory/C2242/net40563
+    0:01:08   37367.1      0.42     256.2      12.0 dut/iMem/C2243/net45890  
+    0:01:08   37367.1      0.42     256.2      12.0 dut/iMem/C2242/net45033  
+    0:01:08   37367.1      0.42     256.2      12.0 memory0/memory/C2243/net41458
+    0:01:08   37372.7      0.42     256.2      12.0 dut/iMem/C2243/net46023  
+    0:01:08   37380.2      0.42     256.2      12.0 dut/iMem/C2243/net45746  
+    0:01:09   37384.0      0.42     256.2      12.0 memory0/memory/C2243/net41777
+    0:01:09   37391.5      0.42     256.2      12.0 memory0/memory/C2242/net40998
+    0:01:09   37414.9      0.42     256.1      12.0 decode0/ctrl/net44545    
+    0:01:09   37437.0      0.42     256.1      11.9 memory0/memory/C2242/net41014
+    0:01:09   37462.3      0.42     256.1      11.9 memory0/memory/C2242/net40427
+    0:01:09   37484.4      0.42     256.1      11.9 execute0/n122            
+    0:01:09   37565.6      0.42     256.1      11.9 memory0/memory/C2242/net40506
+    0:01:09   37662.3      0.42     256.1      11.9 execute0/alu/shift/n35   
+    0:01:09   37726.6      0.42     256.3      11.8 execute0/alu/N147        
+    0:01:09   37925.5      0.42     256.3      11.8 memory0/memory/C2242/net40287
+    0:01:09   38077.1      0.42     256.3      11.7 dut/iMem/C2242/net45146  
+    0:01:09   38140.9      0.42     256.3      11.7 memory0/memory/C2242/net41056
+    0:01:10   38179.0      0.42     256.3      11.6 memory0/memory/C2242/net40521
+    0:01:10   38228.2      0.42     256.3      11.6 memory0/memory/C2242/net39993
+    0:01:10   38316.5      0.42     256.3      11.6 memory0/memory/C2243/net41789
+    0:01:10   38344.2      0.42     256.3      11.6 dut/iMem/C2242/net44961  
+    0:01:10   38539.4      0.42     256.2      11.5 memory0/memory/C2242/net40546
+    0:01:10   38690.5      0.42     256.2      11.4 memory0/memory/C2243/net41205
+    0:01:10   38739.3      0.42     256.2      11.4 memory0/memory/C2242/net40292
+    0:01:10   38780.6      0.42     256.2      11.3 memory0/memory/C2243/net41844
+    0:01:10   38805.0      0.42     256.2      11.3 dut/iMem/net53963        
+    0:01:10   38844.4      0.42     256.2      11.3 dut/iMem/C2243/net45586  
+    0:01:10   38905.4      0.42     256.2      11.3 memory0/memory/C2242/net40667
+    0:01:10   38958.5      0.42     256.2      11.2 dut/iMem/C2242/net44824  
+    0:01:10   39051.9      0.42     256.2      11.2 execute0/alu/shift/n205  
+    0:01:10   39125.1      0.42     256.2      11.2 execute0/alu/U4/net14327 
+    0:01:11   39150.9      0.42     256.2      11.2 execute0/alu/U4/net14368 
+    0:01:11   39195.9      0.42     256.2      11.2 memory0/memory/C2242/net40990
+    0:01:11   39233.5      0.42     256.2      11.1 memory0/memory/C2242/net40047
+    0:01:11   39240.5      0.42     256.2      11.1 dut/iMem/net52523        
+    0:01:11   39244.3      0.42     256.2      11.1 memory0/memory/C2243/net41153
+    0:01:11   39258.4      0.42     256.2      11.1 memory0/memory/C2242/net40831
+    0:01:11   39263.5      0.42     256.2      11.1 dut/iMem/C2242/net45075  
+    0:01:11   39576.1      0.42     256.2      11.0 memory0/memory/C2242/net39907
+    0:01:11   39577.0      0.42     256.2      11.0 memory0/memory/C2243/net41925
+    0:01:11   39578.9      0.42     256.2      11.0 memory0/memory/C2242/net41084
+    0:01:11   39587.3      0.42     256.2      11.0 decode0/register/net44220
+    0:01:12   39677.4      0.42     256.2      11.0 memory0/memory/C2242/net40323
+    0:01:12   39746.4      0.42     256.2      11.0 memory0/memory/C2243/net41923
+    0:01:12   39798.5      0.42     256.2      11.0 memory0/memory/C2242/net40677
+    0:01:12   39828.6      0.42     256.2      10.9 memory0/memory/C2242/net39962
+    0:01:12   39840.8      0.42     256.2      10.9 dut/iMem/C2242/net44891  
+    0:01:12   39944.0      0.42     256.2      10.9 dut/iMem/n125            
+    0:01:12   40083.4      0.42     256.2      10.9 dut/iMem/n194            
+    0:01:12   40222.8      0.42     256.2      10.9 dut/iMem/n269            
+    0:01:12   40362.1      0.42     256.2      10.9 dut/iMem/n335            
+    0:01:12   40501.5      0.42     256.2      10.9 dut/iMem/n401            
+    0:01:12   40640.9      0.42     256.2      10.8 dut/iMem/n472            
+    0:01:12   40780.3      0.42     256.2      10.8 dut/iMem/n538            
+    0:01:12   40919.7      0.42     256.2      10.8 dut/iMem/n607            
+    0:01:12   41059.1      0.42     256.2      10.8 dut/iMem/n676            
+    0:01:12   41198.4      0.42     256.2      10.8 dut/iMem/n742            
+    0:01:12   41337.8      0.42     256.2      10.8 dut/iMem/n814            
+    0:01:12   41477.2      0.42     256.2      10.8 dut/iMem/n880            
+    0:01:13   41616.6      0.42     256.2      10.7 dut/iMem/n948            
+    0:01:13   41756.0      0.42     256.2      10.7 dut/iMem/n1018           
+    0:01:13   41895.3      0.42     256.2      10.7 dut/iMem/n1086           
+    0:01:13   42034.7      0.42     256.2      10.7 dut/iMem/n1153           
+    0:01:13   42174.1      0.42     256.2      10.7 dut/iMem/n1222           
+    0:01:13   42313.5      0.42     256.2      10.7 dut/iMem/n1290           
+    0:01:13   42452.9      0.42     256.2      10.6 dut/iMem/n1360           
+    0:01:13   42536.4      0.42     256.2      10.6 dut/iMem/n134            
+    0:01:13   42627.9      0.42     256.2      10.5 dut/iMem/n237            
+    0:01:13   42719.4      0.42     256.2      10.4 dut/iMem/n338            
+    0:01:13   42811.0      0.42     256.2      10.4 dut/iMem/n437            
+    0:01:13   42902.5      0.42     256.2      10.3 dut/iMem/n535            
+    0:01:13   42994.0      0.42     256.2      10.2 dut/iMem/n635            
+    0:01:13   43085.5      0.42     256.2      10.1 dut/iMem/n733            
+    0:01:13   43177.0      0.42     256.2      10.1 dut/iMem/n830            
+    0:01:13   43268.5      0.42     256.2      10.0 dut/iMem/n929            
+    0:01:13   43360.0      0.42     256.2       9.9 dut/iMem/n1027           
+    0:01:14   43451.5      0.42     256.2       9.8 dut/iMem/n1127           
+    0:01:14   43543.1      0.42     256.2       9.7 dut/iMem/n1225           
+    0:01:14   43634.6      0.42     256.2       9.7 dut/iMem/n1325           
+    0:01:14   43692.3      0.42     256.2       9.6 memory0/memory/C2243/net41769
+    0:01:14   43705.4      0.42     256.2       9.6 writeback0/net39888      
+    0:01:14   43798.8      0.42     256.2       9.6 dut/pc_plus2/adder1/net46267
+    0:01:14   43939.6      0.42     256.2       9.5 dut/iMem/C2242/net44733  
+    0:01:14   44038.6      0.42     252.6       9.5 execute0/alu/shift/n271  
+    0:01:14   44220.3      0.42     251.9       9.5 execute0/alu/shift/n268  
+    0:01:14   44254.1      0.42     251.8       9.5 dut/iMem/C2242/net44580  
+    0:01:15   44253.6      0.42     251.8       9.5 memory0/memory/net56250  
+    0:01:15   44255.0      0.42     251.8       9.5 dut/iMem/C2243/net46090  
+    0:01:15   44256.4      0.42     251.8       9.5 dut/pc_plus2/adder4/net46186
+    0:01:15   44254.5      0.42     251.6       9.5 memory0/memory/C2243/net41181
+    0:01:15   44254.5      0.42     251.6       9.5 dut/iMem/C2242/net45377  
+    0:01:15   44254.5      0.42     251.6       9.5 memory0/memory/C2243/net41478
+    0:01:15   44254.5      0.42     251.6       9.5 dut/iMem/C2242/net44696  
+    0:01:15   44258.3      0.42     251.6       9.5 memory0/memory/C2243/net41586
+    0:01:16   44260.2      0.42     251.6       9.4 dut/iMem/C2243/net45938  
+    0:01:16   44262.5      0.42     251.6       9.4 memory0/memory/C2243/net41723
+    0:01:16   44262.5      0.42     251.6       9.4 dut/iMem/C2242/net44815  
+    0:01:16   44265.3      0.42     251.6       9.4 dut/iMem/C2243/net45558  
+    0:01:16   44290.7      0.42     251.6       9.4 memory0/memory/C2243/net41558
+    0:01:16   44314.6      0.42     251.5       9.4 memory0/memory/C2242/net40234
+    0:01:16   44332.0      0.42     251.5       9.4 memory0/memory/C2242/net40802
+    0:01:16   44338.1      0.42     251.5       9.4 execute0/alu/add/adder2/net43624
+    0:01:16   44354.5      0.42     251.5       9.4 memory0/memory/C2243/net41892
+    0:01:16   44404.2      0.42     251.5       9.4 memory0/memory/C2242/net40322
+    0:01:17   44418.3      0.42     251.5       9.4 memory0/memory/C2243/net41175
+    0:01:17   44418.3      0.42     251.5       9.4 memory0/memory/C2242/net40704
+    0:01:17   44430.0      0.42     251.5       9.3 memory0/memory/C2242/net40390
+    0:01:17   44437.1      0.42     251.5       9.3 memory0/memory/C2242/net40055
+    0:01:17   44437.1      0.42     251.5       9.3 memory0/memory/C2242/net40556
+    0:01:17   44437.1      0.42     251.5       9.3 pcReg/net55433           
+    0:01:17   44445.1      0.42     251.5       9.3 memory0/memory/C2242/net40925
+    0:01:17   44462.0      0.42     251.5       9.3 dut/iMem/C2242/net44673  
+    0:01:17   44464.8      0.42     251.5       9.3 execute0/alu/net55188    
+    0:01:18   44465.2      0.42     251.1       9.3 memory0/memory/net42420  
+    0:01:19   44465.2      0.42     251.0       9.3 decode0/register/reg0/reg16bits[6]/state_reg/D
+    0:01:19   44465.2      0.42     251.0       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44467.6      0.42     251.0       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44500.0      0.42     260.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44511.2      0.42     260.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44518.3      0.42     260.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44516.9      0.42     260.5       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44514.5      0.42     260.5       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:19   44519.2      0.42     260.4       9.3 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:20   44516.4      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44510.8      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44509.3      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44509.3      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44510.8      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44510.8      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44515.9      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44521.1      0.42     259.6       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44521.6      0.42     259.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:20   44530.5      0.42     259.8       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44528.1      0.41     259.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44528.1      0.41     259.1       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44524.4      0.41     259.1       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44520.6      0.41     259.1       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44522.5      0.41     259.0       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44514.5      0.41     259.1       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44514.5      0.41     258.9       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44524.8      0.41     257.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44525.3      0.41     257.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:21   44525.3      0.41     257.7       9.3 pcReg/reg16bits[15]/state_reg/D
+    0:01:22   44530.5      0.41     257.6       9.3 decode0/register/net44219
+    0:01:22   44530.5      0.41     257.6       9.3 execute0/alu/A<10>       
+    0:01:22   44533.3      0.41     257.6       9.3 dut/iMem/net56783        
+    0:01:22   44536.6      0.41     257.5       9.3 execute0/net43896        
+    0:01:22   44538.0      0.41     257.7       9.3 decode0/register/net44482
+    0:01:22   44539.4      0.41     257.7       9.3 decode0/ctrl/net54976    
+    0:01:22   44538.0      0.41     257.7       9.3 dut/iMem/C2243/net45943  
+    0:01:22   44538.0      0.41     257.6       9.3 dut/iMem/C2243/net45697  
+    0:01:23   44540.3      0.41     257.6       9.3 dut/iMem/C2242/net45194  
+    0:01:23   44541.3      0.41     257.8       9.3 memory0/memory/net42093  
+    0:01:24   44537.5      0.41     257.7       9.3 memory0/memory/C2242/net40935
+    0:01:24   44537.5      0.41     256.9       9.3 decode0/register/net44365
+    0:01:24   44541.3      0.41     257.0       9.3 memory0/memory/C2242/net40385
+    0:01:24   44539.4      0.41     257.0       9.3 dut/iMem/C2242/net44699  
+    0:01:24   44553.5      0.41     257.0       9.3 decode0/register/net44238
+    0:01:25   44575.5      0.41     257.0       9.3 memory0/memory/net42710  
+    0:01:25   44573.6      0.41     258.8       9.3 decode0/register/net44368
+    0:01:26   44573.2      0.41     258.8       9.3 dut/iMem/net54856        
+    0:01:26   44618.7      0.57     284.5       9.2 execute0/mem_data1<13>   
+    0:01:26   44654.4      0.61     297.2       9.1 execute0/alu/add/adder3/net43584
+    0:01:27   44702.2      0.73     310.8       9.0 dut/iMem/net57615        
+    0:01:27   44731.3      0.76     333.8       8.9 decode0/register/net56561
+    0:01:27   44789.5      0.79     353.3       8.9 execute0/alu/add/adder1/B<3>
+    0:01:27   44800.3      0.79     353.3       8.9 dut/iMem/C2243/net45534  
+    0:01:27   44821.9      0.79     353.3       8.9 execute0/alu/net43732    
+    0:01:27   44864.1      0.79     368.4       8.8 memory0/memory/C2243/net41139
+    0:01:27   44882.4      0.82     380.9       8.8 dut/iMem/C2243/net45869  
+    0:01:27   44886.7      0.82     380.9       8.8 dut/iMem/C2242/net44835  
+    0:01:28   44899.8      0.82     379.5       8.8 decode0/ctrl/net44512    
+    0:01:28   44909.7      0.82     379.5       8.8 dut/iMem/C2242/net44735  
+    0:01:28   44920.5      0.84     391.4       8.7 execute0/alu/add/adder1/net56601
+    0:01:28   44981.5      0.87     399.9       8.7 dut/iMem/C2242/net45304  
+    0:01:28   45051.4      0.90     407.6       8.6 dut/iMem/C2242/net45235  
+    0:01:28   45118.5      0.92     410.3       8.5 memory0/memory/C2242/net41005
+    0:01:29   45171.1      0.92     417.8       8.5 dut/iMem/C2243/net45644  
+    0:01:29   45199.2      0.93     418.8       8.4 execute0/alu/add/adder1/net43679
+    0:01:29   45300.6      0.93     428.3       8.3 dut/iMem/C2242/net45200  
+    0:01:29   45305.3      0.93     428.3       8.3 memory0/memory/C2242/net41081
+    0:01:29   45306.7      0.93     428.3       8.3 memory0/memory/C2242/net40501
+    0:01:29   45313.7      0.93     428.3       8.3 memory0/memory/C2242/net39943
+    0:01:29   45374.7      0.96     446.1       8.3 dut/iMem/C2242/net45179  
+    0:01:29   45423.1      0.95     441.7       8.2 dut/iMem/net56555        
+    0:01:29   45426.8      0.95     441.7       8.2 memory0/memory/C2242/net41015
+    0:01:30   45430.6      0.95     441.7       8.2 memory0/memory/C2242/net40601
+    0:01:30   45432.5      0.95     441.7       8.2 memory0/memory/C2242/net40221
+    0:01:30   45441.4      0.95     441.8       8.2 pcReg/net55434           
+    0:01:30   45485.5      0.99     442.4       8.2 writeback0/net39860      
+    0:01:30   45565.3      0.99     443.9       8.1 execute0/net43935        
+    0:01:30   45673.2      0.99     445.0       8.1 memory0/memory/net42088  
+    0:01:30   45781.2      0.99     446.1       8.0 memory0/memory/net42237  
+    0:01:30   45889.1      0.99     447.3       8.0 memory0/memory/net42379  
+    0:01:30   45997.0      0.99     448.4       8.0 memory0/memory/net42520  
+    0:01:31   46105.0      0.99     449.5       8.0 memory0/memory/net42654  
+    0:01:31   46212.9      0.99     450.6       8.0 memory0/memory/net42796  
+    0:01:31   46320.8      0.99     451.8       7.9 memory0/memory/net42936  
+    0:01:31   46428.8      0.99     452.9       7.9 memory0/memory/net43078  
+    0:01:31   46536.7      0.99     454.0       7.9 memory0/memory/net43212  
+    0:01:31   46644.7      0.99     455.1       7.9 memory0/memory/net43357  
+    0:01:31   46752.6      0.99     456.3       7.9 memory0/memory/net43508  
+    0:01:31   46838.5      0.99     457.7       7.8 memory0/memory/C2242/net40589
+    0:01:31   46893.9      0.99     458.9       7.7 execute0/net43912        
+    0:01:31   46992.4      0.99     459.1       7.7 memory0/memory/C2243/net41366
+    0:01:32   47006.5      0.99     460.0       7.7 decode0/sign             
+    0:01:32   47083.9      0.99     460.2       7.7 memory0/memory/C2242/net40932
+    0:01:32   47128.5      0.99     460.2       7.6 execute0/net43911        
+    0:01:32   47228.9      1.02     482.5       7.6 execute0/alu/add/adder4/net43556
+    0:01:32   47297.0      1.02     483.1       7.6 writeback0/net39865      
+    0:01:33   47351.4      1.09     485.5       7.6 decode0/ctrl/net44520    
+    0:01:33   47427.9      1.10     485.7       7.5 dut/iMem/C2242/net44633  
+    0:01:33   47499.7      1.15     515.6       7.4 memory0/memory/C2243/net41856
+    0:01:33   47583.3      1.15     516.0       7.4 memory0/memory/C2242/net40955
+    0:01:33   47661.2      1.15     516.0       7.3 memory0/memory/C2242/net40676
+    0:01:33   47739.1      1.15     516.1       7.3 memory0/memory/C2242/net40427
+    0:01:33   47817.4      1.15     516.6       7.2 memory0/memory/C2242/net40132
+    0:01:33   47895.3      1.15     517.9       7.1 memory0/memory/net59185  
+    0:01:33   47989.2      1.15     521.0       7.1 memory0/memory/net60923  
+    0:01:33   48083.1      1.15     522.7       7.0 memory0/memory/net62206  
+    0:01:33   48176.9      1.15     524.7       6.9 memory0/memory/net62564  
+    0:01:33   48273.6      1.20     525.4       6.8 execute0/net55806        
+    0:01:34   48273.1      1.21     525.6       6.8 dut/iMem/C2243/net45412  
+    0:01:34   48276.9      1.20     525.5       6.8 decode0/register/read2data<15>
+    0:01:34   48475.9      1.20     525.5       6.8 decode0/register/net75413
+    0:01:34   48487.1      1.20     525.5       6.8 dut/iMem/net54856        
+    0:01:34   48489.0      1.15     506.0       6.8 pcReg/reg16bits[13]/state_reg/D
+    0:01:35   48426.6      1.10     481.4       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:35   48427.5      1.09     472.1       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:35   48436.9      1.08     471.6       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:35   48433.2      1.06     475.6       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:35   48433.6      1.04     475.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:35   48428.0      1.01     465.0       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:36   48421.9      0.98     456.1       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:36   48423.3      0.97     455.8       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:36   48414.4      0.95     448.5       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:36   48411.6      0.94     447.7       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:36   48402.2      0.93     451.5       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:37   48398.4      0.93     451.5       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:37   48398.4      0.92     450.6       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:37   48399.4      0.92     450.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:37   48394.7      0.91     449.2       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:37   48390.5      0.90     446.0       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:37   48389.5      0.90     442.4       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:37   48383.4      0.89     441.2       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:38   48383.0      0.89     438.9       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:38   48372.6      0.89     436.8       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:38   48368.4      0.89     436.7       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:38   48363.7      0.88     434.5       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:38   48362.3      0.88     434.5       6.7 decode0/register/reg2/reg16bits[7]/state_reg/D
+    0:01:38   48360.0      0.88     435.5       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:38   48359.5      0.88     435.3       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:38   48359.5      0.87     434.8       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:38   48375.0      0.87     431.6       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48381.1      0.87     430.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48379.7      0.87     429.4       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48384.8      0.86     429.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48385.8      0.86     428.9       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48380.1      0.86     427.8       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48382.5      0.86     427.1       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48385.3      0.85     426.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48388.1      0.85     426.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:39   48388.1      0.85     426.1       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48387.6      0.85     426.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48389.1      0.85     426.2       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48388.6      0.85     426.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48390.0      0.85     426.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48389.5      0.85     426.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48385.3      0.85     427.3       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:40   48379.7      0.85     426.7       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:40   48378.7      0.84     426.1       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:40   48376.9      0.84     426.2       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:40   48377.8      0.84     426.2       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:41   48379.2      0.84     426.1       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48381.1      0.83     425.9       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48378.7      0.83     425.6       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48378.3      0.83     425.5       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48384.4      0.83     423.0       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48383.9      0.82     422.0       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:41   48386.7      0.82     422.0       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:41   48389.1      0.82     421.8       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:41   48387.6      0.82     418.0       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:42   48383.0      0.82     418.0       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:42   48383.9      0.82     417.7       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:42   48382.0      0.82     419.3       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:42   48378.3      0.81     419.0       6.7 pcReg/reg16bits[2]/state_reg/D
+    0:01:42   48378.3      0.81     419.0       6.7 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:42   48370.3      0.81     418.5       6.7 decode0/register/reg0/reg16bits[4]/state_reg/D
+    0:01:42   48375.9      0.81     418.3       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:42   48377.3      0.81     417.8       6.7 pcReg/reg16bits[10]/state_reg/D
+    0:01:43   48374.5      0.80     416.2       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48373.1      0.80     416.2       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48376.9      0.80     415.7       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48384.8      0.80     412.8       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48387.2      0.80     412.8       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48386.2      0.80     412.9       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48382.5      0.80     412.8       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48389.1      0.80     412.8       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48390.5      0.80     412.7       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48390.5      0.80     412.7       6.7 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48394.2      0.79     414.1       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48396.6      0.79     413.9       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:43   48399.8      0.79     413.9       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48393.7      0.79     413.6       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48390.5      0.79     412.6       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48383.4      0.79     412.6       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48383.0      0.79     411.1       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48378.7      0.79     410.5       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48380.6      0.79     410.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48382.0      0.79     410.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48378.7      0.79     410.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48381.5      0.79     409.9       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:44   48383.9      0.78     409.9       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48381.1      0.78     409.9       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:45   48383.9      0.78     410.1       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48379.7      0.78     410.0       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48375.0      0.78     410.0       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48372.2      0.78     410.0       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48380.6      0.78     410.0       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48385.3      0.78     409.3       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48388.6      0.78     407.6       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48391.9      0.78     407.4       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48390.9      0.78     407.4       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48393.3      0.78     407.4       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48391.9      0.78     404.8       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:45   48394.7      0.78     404.8       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:46   48385.8      0.77     404.6       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:46   48389.5      0.77     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:46   48390.9      0.77     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:46   48390.9      0.77     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:46   48390.9      0.77     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:46   48387.2      0.77     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:46   48386.7      0.77     404.7       6.6 dut/iMem/n1234           
+    0:01:46   48385.3      0.77     404.7       6.6 dut/iMem/C2243/net45743  
+    0:01:47   48385.3      0.77     404.6       6.6 memory0/memory/C2243/net41336
+    0:01:47   48387.2      0.77     404.6       6.6 dut/iMem/C2242/net45376  
+    0:01:47   48389.1      0.81     405.2       6.6 dut/iMem/C2243/net45469  
+    0:01:47   48391.4      0.81     405.2       6.6 dut/iMem/C2242/net44883  
+    0:01:47   48398.0      0.81     407.1       6.6 memory0/memory/C2243/net41809
+    0:01:47   48398.4      0.81     407.1       6.6 memory0/memory/C2242/net40662
+    0:01:48   48400.8      0.81     407.1       6.6 memory0/memory/C2243/net41904
+    0:01:48   48403.1      0.81     407.1       6.6 memory0/memory/C2243/net41570
+    0:01:48   48403.6      0.81     427.7       6.6 dut/iMem/net75960        
+    0:01:48   48405.9      0.81     427.7       6.6 dut/iMem/C2242/net45193  
+    0:01:49   48423.3      0.81     427.7       6.6 dut/iMem/net58463        
+    0:01:50   48421.4      0.81     427.7       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:50   48427.1      0.79     418.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:50   48428.9      0.78     411.7       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:50   48431.8      0.78     407.2       6.6 decode0/register/reg0/reg16bits[15]/state_reg/D
+    0:01:50   48433.2      0.78     407.0       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48433.6      0.78     406.7       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48428.5      0.77     406.6       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:51   48426.1      0.77     406.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48423.3      0.77     408.1       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48425.7      0.77     408.1       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48423.3      0.77     404.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48414.4      0.77     403.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48420.0      0.77     403.9       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:51   48417.7      0.77     403.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48417.7      0.77     403.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48415.8      0.77     403.3       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48415.8      0.77     403.3       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48408.3      0.77     402.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48412.5      0.76     402.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48413.0      0.76     402.6       6.6 decode0/register/reg0/reg16bits[15]/state_reg/D
+    0:01:52   48400.3      0.76     404.8       6.6 decode0/register/reg0/reg16bits[15]/state_reg/D
+    0:01:52   48397.0      0.76     404.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:52   48398.4      0.76     404.5       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:53   48398.9      0.76     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48402.7      0.76     404.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48403.6      0.76     401.2       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48411.1      0.76     402.0       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48415.8      0.76     401.8       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48417.2      0.75     399.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:53   48417.2      0.75     399.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48419.6      0.75     399.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48416.7      0.75     399.2       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48413.9      0.75     399.2       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48416.3      0.75     399.1       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48417.2      0.75     399.1       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:54   48420.0      0.75     398.9       6.6 decode0/register/reg0/reg16bits[12]/state_reg/D
+    0:01:54   48423.8      0.75     398.7       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:55   48424.3      0.75     398.7       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:55   48421.9      0.75     398.7       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:55   48426.6      0.75     398.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:55   48425.2      0.75     398.6       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:55   48428.9      0.75     398.4       6.6 pcReg/reg16bits[10]/state_reg/D
+    0:01:55   48426.1      0.75     398.2       6.6 decode0/register/reg0/reg16bits[0]/state_reg/D
+    0:01:55   48430.8      0.74     398.4       6.6 pcReg/reg16bits[10]/state_reg/D
+    0:01:56   48430.8      0.74     398.4       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:56   48430.8      0.74     398.2       6.6 pcReg/reg16bits[10]/state_reg/D
+    0:01:56   48428.5      0.74     398.0       6.6 decode0/register/reg0/reg16bits[12]/state_reg/D
+    0:01:56   48429.4      0.74     398.0       6.6 decode0/register/reg1/reg16bits[4]/state_reg/D
+    0:01:56   48428.0      0.74     397.8       6.6 decode0/register/reg0/reg16bits[7]/state_reg/D
+    0:01:56   48433.6      0.74     397.3       6.6 decode0/register/reg0/reg16bits[1]/state_reg/D
+    0:01:56   48436.0      0.74     397.2       6.6 pcReg/reg16bits[10]/state_reg/D
+    0:01:57   48436.5      0.74     396.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:57   48429.4      0.74     396.5       6.6 decode0/register/reg1/reg16bits[4]/state_reg/D
+    0:01:57   48435.5      0.74     396.1       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:57   48434.6      0.74     398.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:57   48447.7      0.73     398.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:57   48451.0      0.73     397.2       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:57   48456.2      0.73     398.6       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:57   48468.4      0.73     398.5       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:58   48467.9      0.73     397.5       6.6 pcReg/reg16bits[13]/state_reg/D
+    0:01:58   48468.8      0.73     397.5       6.6 pcReg/reg16bits[2]/state_reg/D
+    0:01:58   48465.5      0.73     397.5       6.6                          
+    0:01:59   48468.4      0.73     396.4       6.6                          
+    0:01:59   48467.4      0.73     396.1       6.6                          
+    0:01:59   48471.2      0.73     395.8       6.6                          
+    0:01:59   48476.3      0.73     395.8       6.5                          
+    0:01:59   48475.9      0.73     395.7       6.5                          
+    0:01:59   48473.1      0.73     395.6       6.5                          
+    0:01:59   48473.5      0.73     395.4       6.5                          
+    0:01:59   48477.3      0.73     391.6       6.5                          
+    0:01:59   48471.2      0.73     391.6       6.5                          
+    0:01:59   48466.0      0.73     391.5       6.5                          
+    0:01:59   48464.1      0.73     391.4       6.5                          
+    0:02:00   48462.7      0.73     391.4       6.5                          
+    0:02:00   48455.2      0.73     391.3       6.5                          
+    0:02:00   48449.6      0.73     391.3       6.5                          
+    0:02:00   48451.0      0.73     391.2       6.5                          
+    0:02:00   48444.9      0.73     391.1       6.5                          
+    0:02:00   48435.5      0.73     391.0       6.5                          
+    0:02:00   48430.4      0.73     390.9       6.5                          
+    0:02:00   48421.0      0.73     390.6       6.5                          
+    0:02:00   48413.9      0.73     390.5       6.5                          
+    0:02:00   48406.9      0.73     390.2       6.5                          
+    0:02:00   48392.8      0.73     390.0       6.5                          
+    0:02:00   48380.6      0.73     389.4       6.5                          
+    0:02:00   48375.0      0.73     389.1       6.5                          
+    0:02:01   48360.9      0.73     389.1       6.5                          
+    0:02:01   48346.8      0.73     388.9       6.5                          
+    0:02:01   48342.6      0.73     388.8       6.5                          
+    0:02:01   48332.7      0.73     388.7       6.5                          
+    0:02:01   48335.6      0.73     388.6       6.5                          
+    0:02:01   48338.4      0.73     388.4       6.5                          
+    0:02:01   48332.3      0.73     388.3       6.5                          
+    0:02:01   48330.4      0.73     388.2       6.5                          
+    0:02:01   48321.5      0.73     388.1       6.5                          
+    0:02:01   48320.1      0.73     387.9       6.5                          
+    0:02:01   48319.6      0.73     387.7       6.5                          
+    0:02:01   48312.6      0.73     387.5       6.5                          
+    0:02:01   48310.2      0.73     387.4       6.5                          
+    0:02:01   48302.7      0.73     387.3       6.5                          
+    0:02:01   48302.2      0.73     387.2       6.5                          
+    0:02:01   48296.6      0.73     387.1       6.5                          
+    0:02:01   48276.9      0.73     387.0       6.5                          
+    0:02:01   48274.1      0.73     386.9       6.5                          
+    0:02:01   48256.7      0.73     386.8       6.5                          
+    0:02:01   48230.0      0.73     386.7       6.5                          
+    0:02:02   48202.7      0.73     386.6       6.5                          
+    0:02:02   48159.6      0.73     386.6       6.5                          
+    0:02:02   48108.4      0.73     386.5       6.5                          
+    0:02:02   48087.3      0.73     386.3       6.5                          
+    0:02:02   48087.8      0.73     386.3       6.5                          
+    0:02:02   48056.3      0.73     385.1       6.5                          
+    0:02:02   48027.7      0.73     384.8       6.5                          
+    0:02:02   48003.8      0.73     384.7       6.5                          
+    0:02:02   47962.5      0.73     384.4       6.5                          
+    0:02:02   47956.8      0.73     384.3       6.5                          
+    0:02:02   47937.6      0.73     383.0       6.5                          
+    0:02:02   47927.7      0.73     381.0       6.5                          
+    0:02:02   47911.8      0.73     380.9       6.5                          
+    0:02:02   47887.4      0.73     380.7       6.5                          
+    0:02:02   47887.4      0.73     380.7       6.5                          
+    0:02:02   47861.6      0.73     380.6       6.5                          
+    0:02:02   47849.4      0.73     380.6       6.5                          
+    0:02:02   47826.8      0.73     380.6       6.5                          
+    0:02:02   47795.9      0.73     380.5       6.5                          
+    0:02:02   47766.3      0.73     380.4       6.5                          
+    0:02:02   47763.5      0.73     380.4       6.5                          
+    0:02:02   47738.1      0.73     379.8       6.5                          
+    0:02:02   47724.1      0.73     379.8       6.5                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:02:02   47724.1      0.73     379.8       6.5                          
+    0:02:02   47724.1      0.73     379.8       6.5                          
+    0:02:04   44683.0      0.73     378.5       6.5                          
+    0:02:04   43840.1      0.73     362.7       6.4                          
+    0:02:05   43511.6      0.73     362.2       6.4                          
+    0:02:05   43418.2      0.73     362.2       6.4                          
+    0:02:05   43371.3      0.73     362.1       6.4                          
+    0:02:05   43338.0      0.73     362.1       6.4                          
+    0:02:05   43303.2      0.73     362.1       6.4                          
+    0:02:05   43271.3      0.73     362.2       6.4                          
+    0:02:06   43242.7      0.73     362.2       6.4                          
+    0:02:06   43220.7      0.73     362.2       6.4                          
+    0:02:06   43196.7      0.73     362.2       6.4                          
+    0:02:06   43180.3      0.73     362.2       6.4                          
+    0:02:06   43167.6      0.73     362.2       6.4                          
+    0:02:06   43152.6      0.73     362.2       6.4                          
+    0:02:06   43139.0      0.73     362.2       6.4                          
+    0:02:06   43126.8      0.73     362.1       6.4                          
+    0:02:06   43111.8      0.73     362.3       6.4                          
+    0:02:06   43101.0      0.73     362.2       6.4                          
+    0:02:06   43090.2      0.73     362.2       6.4                          
+    0:02:06   43085.0      0.73     362.2       6.4                          
+    0:02:06   43078.5      0.73     362.2       6.4                          
+    0:02:06   43071.9      0.73     362.2       6.4                          
+    0:02:07   43067.7      0.73     362.2       6.4                          
+    0:02:07   43067.7      0.73     362.2       6.4                          
+    0:02:07   43067.7      0.73     362.2       6.4                          
+    0:02:07   42864.9      0.73     367.4       6.4                          
+    0:02:07   42838.6      0.73     367.4       6.4                          
+    0:02:07   42838.2      0.73     367.4       6.4                          
+    0:02:07   42838.2      0.73     367.4       6.4                          
+    0:02:07   42838.2      0.73     367.4       6.4                          
+    0:02:07   42837.7      0.73     367.4       6.4                          
+    0:02:07   42837.7      0.73     367.4       6.4                          
+    0:02:07   42837.7      0.73     367.4       6.4                          
+    0:02:07   42839.1      0.73     367.4       6.4 pcReg/reg16bits[10]/state_reg/D
+    0:02:07   42839.1      0.73     367.4       6.4 pcReg/reg16bits[10]/state_reg/D
+    0:02:08   42841.5      0.73     366.7       6.4 pcReg/reg16bits[10]/state_reg/D
+    0:02:08   42839.1      0.73     366.7       6.4                          
+    0:02:08   42815.6      0.73     366.7       6.4                          
+    0:02:08   42809.5      0.73     366.7       6.4                          
+    0:02:08   42786.1      0.73     366.7       6.4                          
+    0:02:08   42778.6      0.73     366.6       6.4                          
+    0:02:08   42777.2      0.73     366.6       6.4                          
+    0:02:08   42763.6      0.73     366.6       6.4                          
+    0:02:08   42758.4      0.73     366.5       6.4                          
+    0:02:08   42750.4      0.73     366.3       6.4                          
+    0:02:09   42735.4      0.73     366.2       6.4                          
+    0:02:09   42727.9      0.73     366.2       6.4                          
+    0:02:09   42716.2      0.73     365.8       6.4                          
+    0:02:09   42706.8      0.73     365.8       6.4                          
+    0:02:09   42694.1      0.73     365.7       6.4                          
+    0:02:09   42682.8      0.73     365.7       6.4                          
+    0:02:09   42665.5      0.73     365.7       6.4                          
+    0:02:09   42649.0      0.73     365.7       6.4                          
+    0:02:09   42635.0      0.73     365.7       6.4                          
+    0:02:10   42611.5      0.73     365.7       6.4                          
+    0:02:10   42592.7      0.73     365.7       6.4                          
+    0:02:10   42571.6      0.73     365.7       6.4                          
+    0:02:10   42552.8      0.73     365.7       6.4                          
+    0:02:10   42535.0      0.73     365.7       6.4                          
+    0:02:10   42523.7      0.73     365.7       6.4                          
+    0:02:10   42500.7      0.72     365.6       6.4                          
+    0:02:10   42477.8      0.72     365.6       6.4                          
+    0:02:11   42427.5      0.72     365.6       6.4                          
+    0:02:11   42411.6      0.72     365.6       6.4                          
+    0:02:11   42408.8      0.72     364.7       6.4                          
+    0:02:11   42404.1      0.73     364.6       6.4                          
+    0:02:11   42400.3      0.73     366.9       6.4                          
+    0:02:11   42404.1      0.73     366.1       6.4                          
+    0:02:11   42404.1      0.73     366.1       6.4                          
+    0:02:11   42408.8      0.73     365.8       6.4                          
+    0:02:11   42410.2      0.73     365.8       6.4                          
+    0:02:11   42413.0      0.73     365.8       6.4                          
+    0:02:12   42413.9      0.73     365.4       6.4                          
+    0:02:12   42413.9      0.73     365.3       6.4                          
+    0:02:12   42413.9      0.73     365.3       6.4                          
+    0:02:12   42418.6      0.73     365.3       6.4                          
+    0:02:12   42420.5      0.73     365.3       6.4                          
+    0:02:12   42421.9      0.73     365.2       6.4                          
+    0:02:12   42421.9      0.73     365.2       6.4                          
+    0:02:12   42425.2      0.73     365.2       6.4                          
+    0:02:12   42433.6      0.73     365.2       6.4                          
+    0:02:12   42433.6      0.73     365.2       6.4                          
+    0:02:12   42437.9      0.73     365.1       6.4                          
+    0:02:12   42441.6      0.73     365.1       6.4                          
+    0:02:12   42442.6      0.73     365.0       6.4                          
+    0:02:12   42444.0      0.73     365.0       6.4                          
+    0:02:12   42441.6      0.73     365.0       6.4                          
+    0:02:13   42441.6      0.73     365.0       6.4                          
+    0:02:13   42444.9      0.73     364.9       6.4                          
+    0:02:13   42445.4      0.73     364.8       6.4                          
+    0:02:13   42444.4      0.73     364.8       6.4                          
+    0:02:13   42444.9      0.73     364.7       6.4                          
+    0:02:13   42448.7      0.73     364.6       6.4                          
+    0:02:13   42451.9      0.73     364.6       6.4                          
+    0:02:13   42453.8      0.73     364.3       6.4                          
+    0:02:13   42457.1      0.73     364.4       6.4                          
+    0:02:13   42456.6      0.73     364.0       6.4                          
+    0:02:13   42454.3      0.73     363.8       6.4                          
+    0:02:13   42455.2      0.73     363.8       6.4                          
+    0:02:13   42455.2      0.73     363.8       6.4                          
+    0:02:13   42453.8      0.73     363.7       6.4                          
+    0:02:13   42453.8      0.73     363.6       6.4                          
+    0:02:13   42453.8      0.73     363.6       6.4                          
+    0:02:13   42456.2      0.73     363.5       6.4                          
+    0:02:13   42457.6      0.73     363.5       6.4                          
+    0:02:13   42457.1      0.73     363.4       6.4                          
+    0:02:14   42454.3      0.73     363.1       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42451.0      0.72     361.8       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42451.0      0.72     361.7       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42453.3      0.72     361.7       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42451.9      0.72     361.7       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42453.3      0.72     361.6       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:14   42458.5      0.72     361.6       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:15   42461.8      0.72     361.2       6.4 pcReg/reg16bits[13]/state_reg/D
+    0:02:15   42460.4      0.72     361.2       6.4 pcReg/reg16bits[13]/state_reg/D
+Loading db file '/u/k/a/karu/courses/cs552/cad/Synopsys_Libraries/libs/gscl45nm.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'proc' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'memory0/memory/clk': 1168 load(s), 1 driver(s)
+     Net 'dut/pc_plus2/adder2/B<0>': 1051 load(s), 1 driver(s)
+1
+check_design -summary
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP3
+Date:        Sun Mar 21 14:03:19 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     14
+    Unconnected ports (LINT-28)                                     8
+    Constant outputs (LINT-52)                                      6
+
+Cells                                                              44
+    Connected to power or ground (LINT-32)                         40
+    Nets connected to multiple pins on same cell (LINT-33)          4
+--------------------------------------------------------------------------------
+
+Information: Use the 'check_design' command for 
+	 more information about warnings. (LINT-98)
+
+1
+set filename [format "%s%s"  $my_toplevel ".syn.v"]
+proc.syn.v
+write -hierarchy -f verilog $my_toplevel -output synth/$filename
+Writing verilog file '/afs/cs.wisc.edu/u/r/a/ramiz/final/synth/proc.syn.v'.
+Warning: Bus naming style currently specified as %s<%d>, verilog syntax requires bus naming style to be "[]".  (VO-13)
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+set filename [format "%s%s"  $my_toplevel ".ddc"]
+proc.ddc
+write -hierarchy -format ddc -output synth/$filename
+Writing ddc file 'synth/proc.ddc'.
+1
+report_hierarchy > synth/hierarchy.txt
+report_reference > synth/reference_report.txt
+report_area > synth/area_report.txt
+report_cell > synth/cell_report.txt
+report_timing -max_paths 20 > synth/timing_report.txt
+report_power > synth/power_report.txt
+quit
+
+Memory usage for this session 127 Mbytes.
+Memory usage for this session including child processes 127 Mbytes.
+CPU usage for this session 136 seconds ( 0.04 hours ).
+Elapsed time for this session 137 seconds ( 0.04 hours ).
+
+Thank you...

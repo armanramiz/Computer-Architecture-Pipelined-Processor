@@ -1,0 +1,9 @@
+mem_system.v
+cache.v
+clkrst.v
+dff.v
+final_memory.syn.v
+four_bank_mem.v
+memc.syn.v
+memv.syn.v
+register16.v
